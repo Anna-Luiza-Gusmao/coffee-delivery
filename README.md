@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Capa Coffee Delivery" src="./github/capa.png" width="100%">
+  <img alt="Capa Coffee Delivery" src="./.github/capa.png" width="100%">
 </p>
 
 ## 🎉 Let's go!
