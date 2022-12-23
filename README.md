@@ -32,6 +32,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 📚 Bibliotecas
 
 - Phosphor Icons
+- Styled Components
 
 ## 🎨 Figma
 
