@@ -1,7 +1,7 @@
-import { HeaderContainer, ButtonsContainer, LocationContainer, LocationText, CartButton } from './stytes'
-import Logo from '../../assets/logo.svg'
-import IconLocation from '../../assets/location-icon.svg'
-import IconSupermarketCart from '../../assets/supermarket-cart.svg'
+import { HeaderContainer, ButtonsContainer, LocationContainer, LocationText, CartButton } from './styles'
+import Logo from '../../assets/icons/logo.svg'
+import IconLocation from '../../assets/icons/location-icon.svg'
+import IconSupermarketCart from '../../assets/icons/supermarket-cart.svg'
 
 export function Header () {
     return (
