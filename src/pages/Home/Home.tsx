@@ -1,11 +1,13 @@
 import { Header } from "../../components/Header"
-import { DescriptionContainer, TextContainer, Title, SubTitle, CharacterContainer, CharacterBox, CharacterText } from './styles'
+import { DescriptionContainer, TextContainer, Title, SubTitle, CharacterContainer, CharacterBox, CharacterText, CoffeContainer, TitleMain, TitleCoffee, DescriptionCoffee } from './styles'
 
 import Image from '../../assets/coffeeHome.png'
 import Cart from '../../assets/icons/d2-cart.svg'
 import Box from '../../assets/icons/d2-box.svg'
 import Timer from '../../assets/icons/d2-timer.svg'
 import Coffee from '../../assets/icons/d2-coffee.svg'
+
+import TestCoffee from '../../assets/Image.png'
 
 export function Home () {
     return (
@@ -38,6 +40,14 @@ export function Home () {
                     <img src={Image}/>
                 </div>
             </DescriptionContainer>
+            <main>
+                <TitleMain>Nossos cafés</TitleMain>
+                <CoffeContainer>
+                    <img src={TestCoffee} style={{marginTop: '-1rem'}}/>
+                    <TitleCoffee>Expresso Tradicional</TitleCoffee>
+                    <DescriptionCoffee>O tradicional café feito com água quente e grãos moídos</DescriptionCoffee>
+                </CoffeContainer>
+            </main>
         </>
     )
 }
