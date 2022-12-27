@@ -45,7 +45,31 @@ export function Home () {
     useEffect (() => {
         loadCoffees();
         setInitializing(true);
-    }, [initializing])
+    }, [initializing, handleIncreaseAmount, handleDecreaseAmount])
+
+    function handleIncreaseAmount(id: number, currentAmount: number){
+        fetch(`http://localhost:3000/coffee/${id}`, {
+            method: 'PATCH',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ "amountCoffee":  currentAmount + 1 })
+        }).then(data => data.json())
+    }
+
+    function handleDecreaseAmount(id: number, currentAmount: number){
+        currentAmount = currentAmount - 1
+
+        if(currentAmount < 0) currentAmount = 0
+
+        fetch(`http://localhost:3000/coffee/${id}`, {
+            method: 'PATCH',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ "amountCoffee":  currentAmount })
+        }).then(data => data.json())
+    }
 
     return (
         <>
@@ -98,9 +122,9 @@ export function Home () {
                                     </div>
                                     <div style={{display: 'flex'}}>
                                         <AlterPriceContainer>
-                                            <AlterPriceButton>-</AlterPriceButton>
-                                            <span style={{fontSize: '1rem', padding: '0 0.25rem'}}>1</span>
-                                            <AlterPriceButton>+</AlterPriceButton>
+                                            <AlterPriceButton onClick={() => handleIncreaseAmount(coffee.id, coffee.amountCoffee)}>-</AlterPriceButton>
+                                            <span style={{fontSize: '1rem', padding: '0 0.25rem'}}>{coffee.amountCoffee}</span>
+                                            <AlterPriceButton onClick={() => handleIncreaseAmount(coffee.id, coffee.amountCoffee)}>+</AlterPriceButton>
                                         </AlterPriceContainer>
                                         <ButtonCart><img src={CartCoffeeContainer} /></ButtonCart>
                                     </div>

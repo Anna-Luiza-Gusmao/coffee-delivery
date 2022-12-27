@@ -163,6 +163,12 @@ export const AlterPriceButton = styled.button`
     color: ${props => props.theme['purple-300']};
 
     font-size: 1.5rem;
+
+    &:hover {
+        color: ${props => props.theme['purple-500']};
+        cursor: pointer;
+        transition: color 0.5s;
+    }
 `
 
 export const ButtonCart = styled.button`
@@ -174,4 +180,10 @@ export const ButtonCart = styled.button`
     display: flex;
     align-items: center;
     margin-left: 0.5rem;
+
+    &:hover {
+        background-color: ${props => props.theme['purple-300']};
+        cursor: pointer;
+        transition: background-color 0.5s;
+    }
 `
