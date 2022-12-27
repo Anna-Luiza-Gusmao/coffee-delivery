@@ -28,8 +28,6 @@ import Timer from '../../assets/icons/d2-timer.svg'
 import Coffee from '../../assets/icons/d2-coffee.svg'
 import CartCoffeeContainer from '../../assets/icons/cart.svg'
 
-import Coffee1 from '../../assets/coffees/coffee1.png'
-
 import { useState, useEffect, useContext } from 'react'
 import { CoffeeContext } from '../../context'
 
@@ -86,7 +84,11 @@ export function Home () {
                         coffees.map((coffee: any) => (
                             <CoffeContainer key={coffee.id}>
                                 <img src={coffee.image} style={{marginTop: '-1rem'}}/>
-                                <TagCoffee>TRADICIONAL</TagCoffee>
+                                <div style={{marginTop: '0.75rem', marginBottom: '1rem'}}>
+                                {
+                                    (coffee.tag).map((tag: string) => <TagCoffee>{tag}</TagCoffee>)
+                                }
+                                </div>
                                 <TitleCoffee>{coffee.name}</TitleCoffee>
                                 <DescriptionCoffee>{coffee.description}</DescriptionCoffee>
                                 <PriceContainer>

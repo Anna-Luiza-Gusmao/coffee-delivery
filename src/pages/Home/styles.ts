@@ -98,8 +98,7 @@ export const CoffeContainer = styled.div`
 `
 
 export const TagCoffee = styled.span`
-    margin-top: 0.75rem;
-    margin-bottom: 1rem;
+    margin-right: 0.25rem;
     padding: 0.25rem 0.75rem;
     background-color: ${props => props.theme['yellow-100']};
     border-radius: 10px;
