@@ -30,20 +30,11 @@ import CartCoffeeContainer from '../../assets/icons/cart.svg'
 
 import Coffee1 from '../../assets/coffees/coffee1.png'
 
-import { useState, useEffect } from 'react'
-
-interface DataCoffee {
-    id: number,
-    tag: object
-    name: string,
-    description: string,
-    price: string,
-    amountCoffee: number
-}
-
+import { useState, useEffect, useContext } from 'react'
+import { CoffeeContext } from '../../context'
 
 export function Home () {
-    const [coffees, setCoffees] = useState<DataCoffee[]>([])
+    const { coffees, setCoffees} = useContext(CoffeeContext);
     const [initializing, setInitializing] = useState(false)
 
     async function loadCoffees() {
@@ -92,7 +83,7 @@ export function Home () {
                 <TitleMain>Nossos cafés</TitleMain>
                 <AllCoffees>
                     {
-                        coffees.map((coffee) => (
+                        coffees.map((coffee: any) => (
                             <CoffeContainer key={coffee.id}>
                                 <img src={Coffee1} style={{marginTop: '-1rem'}}/>
                                 <TagCoffee>TRADICIONAL</TagCoffee>

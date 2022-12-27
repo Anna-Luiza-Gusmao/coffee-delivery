@@ -137,7 +137,7 @@
             }],
             "name": "Chocolate Quente",
             "description": "Bebida feita com chocolate dissolvido no leite quente e café",
-            "price": "9,90",
+            "price": "10,90",
             "amountCoffee": 0
         },
         { 
@@ -151,7 +151,7 @@
             }],
             "name": "Cubano",
             "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
-            "price": "9,90",
+            "price": "12,90",
             "amountCoffee": 0
         },
         { 
@@ -193,7 +193,7 @@
             }],
             "name": "Irlandês",
             "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
-            "price": "9,90",
+            "price": "15,90",
             "amountCoffee": 0
         }
     ]
