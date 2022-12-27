@@ -21,7 +21,7 @@ export const Title = styled.h1`
 
     padding-bottom: 1rem;
     margin-right: 30rem;
-    @media (min-width: 768px) and (max-width: 1366px){
+    @media (max-width: 1366px){
         margin-right: 5rem;
     }
 `
@@ -32,7 +32,7 @@ export const SubTitle = styled.p`
     font-size: 1.25rem;
 
     margin-right: 30rem;
-    @media (min-width: 768px) and (max-width: 1366px){
+    @media (max-width: 1366px){
         margin-right: 5rem;
     }
 `
@@ -50,6 +50,10 @@ export const CharacterContainer = styled.section`
 
     margin-top: 4.125rem;
     margin-right: 25rem;
+
+    @media (min-width: 768px) and (max-width: 1366px){
+        margin-right: 0;
+    }
 `
 
 export const CharacterBox = styled.div`

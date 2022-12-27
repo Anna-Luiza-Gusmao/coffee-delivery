@@ -122,7 +122,7 @@ export function Home () {
                                     </div>
                                     <div style={{display: 'flex'}}>
                                         <AlterPriceContainer>
-                                            <AlterPriceButton onClick={() => handleIncreaseAmount(coffee.id, coffee.amountCoffee)}>-</AlterPriceButton>
+                                            <AlterPriceButton onClick={() => handleDecreaseAmount(coffee.id, coffee.amountCoffee)}>-</AlterPriceButton>
                                             <span style={{fontSize: '1rem', padding: '0 0.25rem'}}>{coffee.amountCoffee}</span>
                                             <AlterPriceButton onClick={() => handleIncreaseAmount(coffee.id, coffee.amountCoffee)}>+</AlterPriceButton>
                                         </AlterPriceContainer>
