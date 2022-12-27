@@ -85,7 +85,7 @@ export function Home () {
                     {
                         coffees.map((coffee: any) => (
                             <CoffeContainer key={coffee.id}>
-                                <img src={Coffee1} style={{marginTop: '-1rem'}}/>
+                                <img src={coffee.image} style={{marginTop: '-1rem'}}/>
                                 <TagCoffee>TRADICIONAL</TagCoffee>
                                 <TitleCoffee>{coffee.name}</TitleCoffee>
                                 <DescriptionCoffee>{coffee.description}</DescriptionCoffee>

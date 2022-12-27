@@ -2,6 +2,7 @@
     "coffee": [
         { 
             "id": 1, 
+            "image": "./src/assets/coffees/coffee1.png",
             "tag": [{
                 "TRADICIONAL": true,
                 "GELADO": false,
@@ -16,6 +17,7 @@
         },
         { 
             "id": 2, 
+            "image": "./src/assets/coffees/coffee2.png",
             "tag": [{
                 "TRADICIONAL": true,
                 "GELADO": false,
@@ -30,6 +32,7 @@
         },
         { 
             "id": 3, 
+            "image": "./src/assets/coffees/coffee3.png",
             "tag": [{
                 "TRADICIONAL": true,
                 "GELADO": false,
@@ -44,6 +47,7 @@
         },
         { 
             "id": 4, 
+            "image": "./src/assets/coffees/coffee4.png",
             "tag": [{
                 "TRADICIONAL": true,
                 "GELADO": true,
@@ -58,6 +62,7 @@
         },
         { 
             "id": 5, 
+            "image": "./src/assets/coffees/coffee5.png",
             "tag": [{
                 "TRADICIONAL": true,
                 "GELADO": false,
@@ -72,6 +77,7 @@
         },
         { 
             "id": 6, 
+            "image": "./src/assets/coffees/coffee6.png",
             "tag": [{
                 "TRADICIONAL": true,
                 "GELADO": false,
@@ -86,6 +92,7 @@
         },
         { 
             "id": 7, 
+            "image": "./src/assets/coffees/coffee7.png",
             "tag": [{
                 "TRADICIONAL": true,
                 "GELADO": false,
@@ -100,6 +107,7 @@
         },
         { 
             "id": 8, 
+            "image": "./src/assets/coffees/coffee8.png",
             "tag": [{
                 "TRADICIONAL": true,
                 "GELADO": false,
@@ -114,6 +122,7 @@
         },
         { 
             "id": 9, 
+            "image": "./src/assets/coffees/coffee9.png",
             "tag": [{
                 "TRADICIONAL": true,
                 "GELADO": false,
@@ -128,6 +137,7 @@
         },
         { 
             "id": 10, 
+            "image": "./src/assets/coffees/coffee10.png",
             "tag": [{
                 "TRADICIONAL": false,
                 "GELADO": false,
@@ -142,6 +152,7 @@
         },
         { 
             "id": 11, 
+            "image": "./src/assets/coffees/coffee11.png",
             "tag": [{
                 "TRADICIONAL": false,
                 "GELADO": true,
@@ -156,6 +167,7 @@
         },
         { 
             "id": 12, 
+            "image": "./src/assets/coffees/coffee12.png",
             "tag": [{
                 "TRADICIONAL": false,
                 "GELADO": false,
@@ -170,6 +182,7 @@
         },
         { 
             "id": 13, 
+            "image": "./src/assets/coffees/coffee13.png",
             "tag": [{
                 "TRADICIONAL": false,
                 "GELADO": false,
@@ -184,6 +197,7 @@
         },
         { 
             "id": 14, 
+            "image": "./src/assets/coffees/coffee14.png",
             "tag": [{
                 "TRADICIONAL": false,
                 "GELADO": false,
