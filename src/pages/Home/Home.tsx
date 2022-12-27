@@ -32,7 +32,7 @@ import { useState, useEffect, useContext } from 'react'
 import { CoffeeContext } from '../../context'
 
 export function Home () {
-    const { coffees, setCoffees} = useContext(CoffeeContext);
+    const { coffees, setCoffees, setTotalAmountCoffee, totalAmountCoffee } = useContext(CoffeeContext);
     const [initializing, setInitializing] = useState(false)
 
     async function loadCoffees() {
@@ -56,6 +56,7 @@ export function Home () {
             body: JSON.stringify({ "amountCoffee":  currentAmount + 1 })
         }).then(data => data.json())
 
+        setTotalAmountCoffee(totalAmountCoffee + 1)
         setInitializing(!initializing)
     }
 
@@ -72,6 +73,11 @@ export function Home () {
             body: JSON.stringify({ "amountCoffee":  currentAmount })
         }).then(data => data.json())
 
+        if (totalAmountCoffee == 0) {
+            setTotalAmountCoffee(0)
+        }else{
+            setTotalAmountCoffee(totalAmountCoffee - 1)
+        }
         setInitializing(!initializing)
     }
 
