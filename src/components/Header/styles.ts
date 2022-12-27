@@ -32,6 +32,7 @@ export const LocationText = styled.p`
 export const CartButton = styled.div`
     border: none;
     border-radius: 8px;
+    cursor: pointer;
 
     display: flex;
     margin-left: 0.75rem;
