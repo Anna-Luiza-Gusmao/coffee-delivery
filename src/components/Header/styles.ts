@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const HeaderContainer = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 
     padding: 2rem 0rem;
@@ -10,6 +10,7 @@ export const HeaderContainer = styled.div`
 
 export const ButtonsContainer = styled.div`
     display: flex;
+    align-items: flex-end;
 `
 
 export const LocationContainer = styled.div`
@@ -18,6 +19,7 @@ export const LocationContainer = styled.div`
 
     padding: 0.5rem; 
     border-radius: 8px;
+    height: 38px;
     
     background-color: ${props => props.theme['purple-100']};
 `
@@ -36,4 +38,26 @@ export const CartButton = styled.div`
     padding: 0.5rem;
 
     background-color: ${props => props.theme['yellow-100']};
+`
+
+export const AmountCoffee = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    width: 20px;
+    height: 20px;
+    right: -34px;
+    top: 12px;
+
+    background-color: ${props => props.theme['yellow-500']};
+    border-radius: 1000px;
+    color: #FFF;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    z-index: 1;
 `

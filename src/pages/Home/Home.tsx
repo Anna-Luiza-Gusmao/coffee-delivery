@@ -45,7 +45,7 @@ export function Home () {
     useEffect (() => {
         loadCoffees();
         setInitializing(true);
-    }, [initializing, handleIncreaseAmount, handleDecreaseAmount])
+    }, [initializing])
 
     function handleIncreaseAmount(id: number, currentAmount: number){
         fetch(`http://localhost:3000/coffee/${id}`, {
@@ -55,6 +55,8 @@ export function Home () {
             },
             body: JSON.stringify({ "amountCoffee":  currentAmount + 1 })
         }).then(data => data.json())
+
+        setInitializing(!initializing)
     }
 
     function handleDecreaseAmount(id: number, currentAmount: number){
@@ -69,6 +71,8 @@ export function Home () {
             },
             body: JSON.stringify({ "amountCoffee":  currentAmount })
         }).then(data => data.json())
+
+        setInitializing(!initializing)
     }
 
     return (
