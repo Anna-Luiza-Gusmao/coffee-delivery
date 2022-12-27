@@ -34,8 +34,7 @@ import { useState, useEffect } from 'react'
 
 interface DataCoffee {
     id: number,
-    tag_tradiotional: boolean,
-    tag_with_milk: boolean,
+    tag: object
     name: string,
     description: string,
     price: string,
@@ -94,7 +93,7 @@ export function Home () {
                 <AllCoffees>
                     {
                         coffees.map((coffee) => (
-                            <CoffeContainer>
+                            <CoffeContainer key={coffee.id}>
                                 <img src={Coffee1} style={{marginTop: '-1rem'}}/>
                                 <TagCoffee>TRADICIONAL</TagCoffee>
                                 <TitleCoffee>{coffee.name}</TitleCoffee>
