@@ -17,7 +17,8 @@ import { DescriptionContainer,
     ButtonCart,
     PriceContainer,
     AlterPriceContainer,
-    AlterPriceButton
+    AlterPriceButton,
+    AllCoffees
  } from './styles'
 
 import Image from '../../assets/coffeeHome.png'
@@ -27,9 +28,37 @@ import Timer from '../../assets/icons/d2-timer.svg'
 import Coffee from '../../assets/icons/d2-coffee.svg'
 import CartCoffeeContainer from '../../assets/icons/cart.svg'
 
-import TestCoffee from '../../assets/Image.png'
+import Coffee1 from '../../assets/coffees/coffee1.png'
+
+import { useState, useEffect } from 'react'
+
+interface DataCoffee {
+    id: number,
+    tag_tradiotional: boolean,
+    tag_with_milk: boolean,
+    name: string,
+    description: string,
+    price: string,
+    amountCoffee: number
+}
+
 
 export function Home () {
+    const [coffees, setCoffees] = useState<DataCoffee[]>([])
+    const [initializing, setInitializing] = useState(false)
+
+    async function loadCoffees() {
+        const response = await fetch('http://localhost:3000/coffee');
+        const data = await response.json();
+
+        setCoffees(data);
+    }
+
+    useEffect (() => {
+        loadCoffees();
+        setInitializing(true);
+    }, [initializing])
+
     return (
         <>
             <Header />
@@ -62,26 +91,32 @@ export function Home () {
             </DescriptionContainer>
             <main>
                 <TitleMain>Nossos cafés</TitleMain>
-                <CoffeContainer>
-                    <img src={TestCoffee} style={{marginTop: '-1rem'}}/>
-                    <TagCoffee>TRADICIONAL</TagCoffee>
-                    <TitleCoffee>Expresso Tradicional</TitleCoffee>
-                    <DescriptionCoffee>O tradicional café feito com água quente e grãos moídos</DescriptionCoffee>
-                    <PriceContainer>
-                        <div>
-                            <DollarSign>R$</DollarSign>
-                            <PriceCoffee>9,90</PriceCoffee>
-                        </div>
-                        <div style={{display: 'flex'}}>
-                            <AlterPriceContainer>
-                                <AlterPriceButton>-</AlterPriceButton>
-                                <span style={{fontSize: '1rem', padding: '0 0.25rem'}}>1</span>
-                                <AlterPriceButton>+</AlterPriceButton>
-                            </AlterPriceContainer>
-                            <ButtonCart><img src={CartCoffeeContainer} /></ButtonCart>
-                        </div>
-                    </PriceContainer>
-                </CoffeContainer>
+                <AllCoffees>
+                    {
+                        coffees.map((coffee) => (
+                            <CoffeContainer>
+                                <img src={Coffee1} style={{marginTop: '-1rem'}}/>
+                                <TagCoffee>TRADICIONAL</TagCoffee>
+                                <TitleCoffee>{coffee.name}</TitleCoffee>
+                                <DescriptionCoffee>{coffee.description}</DescriptionCoffee>
+                                <PriceContainer>
+                                    <div>
+                                        <DollarSign>R$</DollarSign>
+                                        <PriceCoffee>{coffee.price}</PriceCoffee>
+                                    </div>
+                                    <div style={{display: 'flex'}}>
+                                        <AlterPriceContainer>
+                                            <AlterPriceButton>-</AlterPriceButton>
+                                            <span style={{fontSize: '1rem', padding: '0 0.25rem'}}>1</span>
+                                            <AlterPriceButton>+</AlterPriceButton>
+                                        </AlterPriceContainer>
+                                        <ButtonCart><img src={CartCoffeeContainer} /></ButtonCart>
+                                    </div>
+                                </PriceContainer>
+                            </CoffeContainer>
+                        ))
+                    }
+                </AllCoffees>
             </main>
         </>
     )

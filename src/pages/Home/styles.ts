@@ -66,10 +66,22 @@ export const TitleMain = styled.h2`
     color: ${props => props.theme['gray-400']};
 `
 
-export const CoffeContainer = styled.div`
+export const AllCoffees = styled.div`
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 3rem;
+    column-gap: 2.5rem;
+
     margin-top: 3.375rem;
     margin-bottom: 9.813rem;
 
+    @media (min-width: 768px) and (max-width: 1366px){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+`
+
+export const CoffeContainer = styled.div`
     background-color: ${props => props.theme['white-100']};
     border-top-right-radius: 36px;
     border-bottom-left-radius: 36px;
