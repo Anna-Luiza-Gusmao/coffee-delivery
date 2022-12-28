@@ -2,10 +2,10 @@ import styled from "styled-components"
 
 export const Container = styled.main`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     margin-top: 2rem;
-    margin-bottom: 15rem;
+    margin-bottom: 10rem;
 `
 
 export const TitleContainers = styled.p`

@@ -43,9 +43,15 @@ export function Home () {
         setCoffees(data);
     }
 
+    const updateLocalStorage = () => {
+        const stateAmountCoffee = JSON.stringify(totalAmountCoffee)
+        localStorage.setItem('@coffee-delivery: amountCoffee-state-1.0.0', stateAmountCoffee)
+    }
+
     useEffect (() => {
         loadCoffees();
         setInitializing(true);
+        updateLocalStorage();
     }, [initializing])
 
     function handleIncreaseAmount(id: number, currentAmount: number){

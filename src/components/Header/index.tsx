@@ -2,7 +2,7 @@ import { HeaderContainer, ButtonsContainer, LocationContainer, LocationText, Car
 import Logo from '../../assets/icons/logo.svg'
 import IconLocation from '../../assets/icons/location-icon.svg'
 import IconSupermarketCart from '../../assets/icons/supermarket-cart.svg'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { CoffeeContext } from '../../context'
 import { useNavigate } from 'react-router-dom'
 

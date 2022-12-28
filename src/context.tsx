@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from 'react'
+import { ReactNode, createContext, useState, useEffect } from 'react'
 
 export const CoffeeContext = createContext({} as any)
 
@@ -17,7 +17,12 @@ interface DataCoffee {
 
 export function CoffeeContextProvider ({children}: CoffeeContextProviderProps) {
     const [coffees, setCoffees] = useState<DataCoffee[]>([])
-    const [totalAmountCoffee, setTotalAmountCoffee] = useState(0)
+
+    const amountCoffeeLocalStorage = localStorage.getItem('@coffee-delivery: amountCoffee-state-1.0.0')
+    let stateAmountCoffee = 0
+    if (amountCoffeeLocalStorage != null) stateAmountCoffee = parseInt(amountCoffeeLocalStorage)
+
+    const [totalAmountCoffee, setTotalAmountCoffee] = useState(stateAmountCoffee)
 
     return (
         <CoffeeContext.Provider value={{
