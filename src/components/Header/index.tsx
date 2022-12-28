@@ -12,7 +12,7 @@ export function Header () {
 
     return (
         <HeaderContainer>
-            <img src={Logo}/>
+            <img src={Logo} onClick={() => navigate('/')} style={{cursor: 'pointer'}}/>
 
             <ButtonsContainer>
                 <LocationContainer>

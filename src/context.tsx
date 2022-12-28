@@ -15,8 +15,20 @@ interface DataCoffee {
     amountCoffee: number
 }
 
+interface DataAddress {
+    id: number,
+    cep: string,
+    street: string,
+    number: number,
+    complement: string,
+    district: string,
+    city: string,
+    state: string
+}
+
 export function CoffeeContextProvider ({children}: CoffeeContextProviderProps) {
     const [coffees, setCoffees] = useState<DataCoffee[]>([])
+    const [address, setAddress] = useState<DataAddress[]>([])
 
     const amountCoffeeLocalStorage = localStorage.getItem('@coffee-delivery: amountCoffee-state-1.0.0')
     let stateAmountCoffee = 0
@@ -29,7 +41,9 @@ export function CoffeeContextProvider ({children}: CoffeeContextProviderProps) {
 			coffees,
             setCoffees,
             totalAmountCoffee, 
-            setTotalAmountCoffee
+            setTotalAmountCoffee,
+            address, 
+            setAddress
 		}}
 		>
 			{children}

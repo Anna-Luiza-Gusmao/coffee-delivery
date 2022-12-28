@@ -20,7 +20,7 @@
       "name": "Expresso Americano",
       "description": "Expresso diluído, menos intenso que o tradicional",
       "price": "9,90",
-      "amountCoffee": 0
+      "amountCoffee": 1
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
       "name": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
       "price": "9,90",
-      "amountCoffee": 4
+      "amountCoffee": 1
     },
     {
       "id": 4,
@@ -67,7 +67,7 @@
       "name": "Latte",
       "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
       "price": "9,90",
-      "amountCoffee": 0
+      "amountCoffee": 1
     },
     {
       "id": 7,
@@ -115,7 +115,7 @@
       "name": "Chocolate Quente",
       "description": "Bebida feita com chocolate dissolvido no leite quente e café",
       "price": "10,90",
-      "amountCoffee": 0
+      "amountCoffee": 1
     },
     {
       "id": 11,
@@ -173,7 +173,9 @@
       "complement": "Próximo a uma padaria",
       "district": "Farrapos",
       "city": "Porto Alegre",
-      "state": "RS"
+      "state": "RS",
+      "payment": "Dinheiro",
+      "id": 1
     }
   ]
 }

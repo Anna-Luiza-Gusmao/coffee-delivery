@@ -20,44 +20,61 @@ import {
 
 import { FormAddress } from "../../components/FormAddress";
 import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react';
-import { FormEvent, useContext } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { CoffeeContext } from '../../context'
 
 export function Checkout() {
     const navigate = useNavigate()
-    const { coffees } = useContext(CoffeeContext);
+    const [chosenPaymentOption, setChosenPaymentOption] = useState("")
+    const [initializing, setInitializing] = useState(false)
 
     function handleAddressForm(event: FormEvent) {
         event.preventDefault();
 
-        // fetch('http://localhost:3000/address', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         "cep": "90250-440",
-        //         "street": "Rua João Daniel Martinelli",
-        //         "number": 102,
-        //         "complement": "Próximo a uma padaria",
-        //         "district": "Farrapos",
-        //         "city": "Porto Alegre",
-        //         "state": "RS"
-        //     })
-        // }).then(data => data.json())
+        fetch('http://localhost:3000/address', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "cep": "90250-440",
+                "street": "Rua João Daniel Martinelli",
+                "number": 102,
+                "complement": "Próximo a uma padaria",
+                "district": "Farrapos",
+                "city": "Porto Alegre",
+                "state": "RS",
+                "payment": chosenPaymentOption
+            })
+        }).then(data => data.json())
 
-        // coffees.map((coffee: any) =>
-        //     fetch(`http://localhost:3000/coffee/${coffee.id}`, {
-        //         method: 'PATCH',
-        //         headers: {
-        //         'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify({ "amountCoffee":  0})
-        //     }).then(data => data.json())
-        // )
         navigate('/success')
     }
+
+    const credito = document.getElementById(
+        'buttonCredito',
+    ) as HTMLButtonElement;
+    const paymentOptionCredito = () => {
+        if (credito != null) setChosenPaymentOption(credito.value)
+        console.log(chosenPaymentOption)
+    }
+
+    const debito = document.getElementById(
+        'buttonDebito',
+    ) as HTMLButtonElement;
+    const paymentOptionDebito = () => {
+        if (debito != null) setChosenPaymentOption(debito.value)
+        console.log(chosenPaymentOption)
+    }
+
+    const dinheiro = document.getElementById(
+        'buttonDinheiro',
+    ) as HTMLButtonElement;
+    const paymentOptionDinheiro = () => {
+        if (dinheiro != null) setChosenPaymentOption(dinheiro.value)
+        console.log(chosenPaymentOption)
+    }
+    
 
     return (
         <>
@@ -75,17 +92,17 @@ export function Checkout() {
                             </div>
                         </HeaderPaymentContainer>
                         <PaymentButtons>
-                            <PaymentOption value="Credito">
+                            <PaymentOption id="buttonCredito" type="button" value="Crédito" onClick={paymentOptionCredito}>
                                 <CreditCard color="#8047F8" size={14} />
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 CARTÃO DE CRÉDITO
                             </PaymentOption>
-                            <PaymentOption value="Debito">
+                            <PaymentOption id="buttonDebito" type="button" value="Débito" onClick={paymentOptionDebito}>
                                 <Bank color="#8047F8" size={14} />
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 CARTÃO DE DÉBITO
                             </PaymentOption>
-                            <PaymentOption value="Dinheiro">
+                            <PaymentOption id="buttonDinheiro" type="button" value="Dinheiro" onClick={paymentOptionDinheiro}>
                                 <Money color="#8047F8" size={14} />
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 DINHEIRO
