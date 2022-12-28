@@ -20,13 +20,12 @@ import {
 
 import { FormAddress } from "../../components/FormAddress";
 import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react';
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router";
 
 export function Checkout() {
     const navigate = useNavigate()
     const [chosenPaymentOption, setChosenPaymentOption] = useState("")
-    const [initializing, setInitializing] = useState(false)
 
     function handleAddressForm(event: FormEvent) {
         event.preventDefault();
@@ -51,31 +50,18 @@ export function Checkout() {
         navigate('/success')
     }
 
-    const credito = document.getElementById(
-        'buttonCredito',
-    ) as HTMLButtonElement;
     const paymentOptionCredito = () => {
-        if (credito != null) setChosenPaymentOption(credito.value)
-        console.log(chosenPaymentOption)
+        setChosenPaymentOption("Crédito")
     }
 
-    const debito = document.getElementById(
-        'buttonDebito',
-    ) as HTMLButtonElement;
     const paymentOptionDebito = () => {
-        if (debito != null) setChosenPaymentOption(debito.value)
-        console.log(chosenPaymentOption)
+        setChosenPaymentOption("Débito")
     }
 
-    const dinheiro = document.getElementById(
-        'buttonDinheiro',
-    ) as HTMLButtonElement;
     const paymentOptionDinheiro = () => {
-        if (dinheiro != null) setChosenPaymentOption(dinheiro.value)
-        console.log(chosenPaymentOption)
+        setChosenPaymentOption("Dinheiro")
     }
     
-
     return (
         <>
             <Header />
@@ -92,17 +78,17 @@ export function Checkout() {
                             </div>
                         </HeaderPaymentContainer>
                         <PaymentButtons>
-                            <PaymentOption id="buttonCredito" type="button" value="Crédito" onClick={paymentOptionCredito}>
+                            <PaymentOption type="button" onClick={paymentOptionCredito}>
                                 <CreditCard color="#8047F8" size={14} />
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 CARTÃO DE CRÉDITO
                             </PaymentOption>
-                            <PaymentOption id="buttonDebito" type="button" value="Débito" onClick={paymentOptionDebito}>
+                            <PaymentOption type="button"  onClick={paymentOptionDebito}>
                                 <Bank color="#8047F8" size={14} />
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 CARTÃO DE DÉBITO
                             </PaymentOption>
-                            <PaymentOption id="buttonDinheiro" type="button" value="Dinheiro" onClick={paymentOptionDinheiro}>
+                            <PaymentOption type="button" onClick={paymentOptionDinheiro}>
                                 <Money color="#8047F8" size={14} />
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 DINHEIRO
