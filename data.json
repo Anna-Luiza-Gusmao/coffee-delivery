@@ -55,7 +55,7 @@
       "name": "Café com Leite",
       "description": "Meio a meio de expresso tradicional com leite vaporizado",
       "price": "9,90",
-      "amountCoffee": 0
+      "amountCoffee": 1
     },
     {
       "id": 6,

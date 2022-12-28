@@ -30,6 +30,7 @@ import CartCoffeeContainer from '../../assets/icons/cart.svg'
 
 import { useState, useEffect, useContext } from 'react'
 import { CoffeeContext } from '../../context'
+import { useNavigate } from "react-router-dom"
 
 export function Home () {
     const { coffees, setCoffees, setTotalAmountCoffee, totalAmountCoffee } = useContext(CoffeeContext);
@@ -80,6 +81,8 @@ export function Home () {
         }
         setInitializing(!initializing)
     }
+
+    const navigate = useNavigate()
 
     return (
         <>
@@ -136,7 +139,7 @@ export function Home () {
                                             <span style={{fontSize: '1rem', padding: '0 0.25rem'}}>{coffee.amountCoffee}</span>
                                             <AlterPriceButton onClick={() => handleIncreaseAmount(coffee.id, coffee.amountCoffee)}>+</AlterPriceButton>
                                         </AlterPriceContainer>
-                                        <ButtonCart><img src={CartCoffeeContainer} /></ButtonCart>
+                                        <ButtonCart onClick={() => navigate('/checkout')}><img src={CartCoffeeContainer} /></ButtonCart>
                                     </div>
                                 </PriceContainer>
                             </CoffeContainer>
