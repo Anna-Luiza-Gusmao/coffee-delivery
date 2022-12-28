@@ -37,17 +37,17 @@ export function Checkout () {
                             </div>
                         </HeaderPaymentContainer>
                         <PaymentButtons>
-                            <PaymentOption>
+                            <PaymentOption value="Credito">
                                 <CreditCard color="#8047F8" size={14} /> 
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 CARTÃO DE CRÉDITO
                             </PaymentOption>
-                            <PaymentOption>
+                            <PaymentOption value="Debito">
                                 <Bank color="#8047F8" size={14} /> 
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 CARTÃO DE DÉBITO
                             </PaymentOption>
-                            <PaymentOption>
+                            <PaymentOption value="Dinheiro">
                                 <Money color="#8047F8" size={14} /> 
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 DINHEIRO
