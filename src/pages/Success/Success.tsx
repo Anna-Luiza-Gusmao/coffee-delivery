@@ -1,4 +1,4 @@
-import { Header } from "../../components/Header";
+import { HeaderSuccess } from "../../components/HeaderSuccess";
 import { Card, Container, SubCard, SubTitle, Title, Description } from "./styles";
 
 import Delivery from '../../assets/delivery.svg'
@@ -38,7 +38,7 @@ export function Success() {
 
     return (
         <>
-            <Header />
+            <HeaderSuccess />
             <Container>
                 <div>
                     <Title>Uhu! Pedido confirmado</Title>

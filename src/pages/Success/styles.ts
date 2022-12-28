@@ -6,6 +6,10 @@ export const Container = styled.div`
     align-items: flex-end;
 
     margin-top: 4rem;
+
+    @media (min-width: 768px) and (max-width: 1366px){
+        margin-top: 2rem;
+    }
 `
 
 export const Title = styled.h1`
