@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.main`
     display: flex;
+    justify-content: space-between;
 
     margin-top: 2rem;
     margin-bottom: 15rem;
@@ -66,5 +67,74 @@ export const PaymentOption = styled.button`
     }
     &:focus {
         box-shadow: 0 0 0 1px ${(props) => props.theme['purple-300']};
+    }
+`
+
+export const CoffeContainer = styled.div`
+    background-color: ${props => props.theme['white-100']};
+    border-top-right-radius: 36px;
+    border-bottom-left-radius: 36px;
+    padding: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 28rem;
+
+    @media (min-width: 768px) and (max-width: 1366px){
+        width: 24rem;
+    }
+`
+
+export const TotalItems = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 0.938rem;
+`
+
+export const Description = styled.p`
+    font-size: 0.875rem;
+    line-height: 130%;
+    color: ${props => props.theme['gray-300']};
+`
+
+export const Price = styled.p`
+    color: ${props => props.theme['gray-300']};
+`
+
+export const Total = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 1.5rem;
+`
+
+export const DescriptionTotal = styled.p`
+    font-size: 1.25rem;
+    line-height: 130%;
+    font-weight: 700;
+    color: ${props => props.theme['gray-400']};
+`
+
+export const TotalPrice = styled.p`
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: ${props => props.theme['gray-400']};
+`
+
+export const ConfirmButton = styled.button`
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem;
+
+    background-color: ${props => props.theme['yellow-600']};
+    color: #FFF;
+
+    &:hover {
+        cursor: pointer;
+        background-color: ${props => props.theme['yellow-500']};
+        transition: background-color 0.5s;
     }
 `

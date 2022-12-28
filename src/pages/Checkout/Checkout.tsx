@@ -1,5 +1,22 @@
 import { Header } from "../../components/Header";
-import { Container, TitleContainers, PaymentContainer, TitlePayment, SubTitlePayment, HeaderPaymentContainer, PaymentButtons, PaymentOption } from "./styles";
+import { Container, 
+    TitleContainers, 
+    PaymentContainer, 
+    TitlePayment, 
+    SubTitlePayment, 
+    HeaderPaymentContainer, 
+    PaymentButtons, 
+    PaymentOption,
+    CoffeContainer,
+    TotalItems,
+    ConfirmButton,
+    Description,
+    Price,
+    Total,
+    DescriptionTotal,
+    TotalPrice
+} from "./styles";
+
 import { FormAddress } from "../../components/FormAddress";
 import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react';
 
@@ -40,6 +57,21 @@ export function Checkout () {
                 </section>
                 <section>
                     <TitleContainers>Cafés selecionados</TitleContainers>
+                    <CoffeContainer>
+                        <TotalItems>
+                            <Description>Total de itens</Description>
+                            <Price>R$ </Price>
+                        </TotalItems>
+                        <TotalItems>
+                            <Description>Entrega</Description>
+                            <Price>R$ </Price>
+                        </TotalItems>
+                        <Total>
+                            <DescriptionTotal>Total</DescriptionTotal>
+                            <TotalPrice>R$ </TotalPrice>
+                        </Total>
+                        <ConfirmButton type="submit">CONFIRMAR PEDIDO</ConfirmButton>
+                    </CoffeContainer>
                 </section>
             </Container>
         </>
