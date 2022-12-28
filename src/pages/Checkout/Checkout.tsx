@@ -1,11 +1,12 @@
 import { Header } from "../../components/Header";
-import { Container, 
-    TitleContainers, 
-    PaymentContainer, 
-    TitlePayment, 
-    SubTitlePayment, 
-    HeaderPaymentContainer, 
-    PaymentButtons, 
+import {
+    Container,
+    TitleContainers,
+    PaymentContainer,
+    TitlePayment,
+    SubTitlePayment,
+    HeaderPaymentContainer,
+    PaymentButtons,
     PaymentOption,
     CoffeContainer,
     TotalItems,
@@ -19,12 +20,33 @@ import { Container,
 
 import { FormAddress } from "../../components/FormAddress";
 import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react';
+import { FormEvent } from "react";
 
-export function Checkout () {
+export function Checkout() {
+    function handleAddressForm(event: FormEvent) {
+        event.preventDefault();
+
+        fetch('http://localhost:3000/address', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "cep": "90250-440",
+                "street": "Rua João Daniel Martinelli",
+                "number": 102,
+                "complement": "Próximo a uma padaria",
+                "district": "Farrapos",
+                "city": "Porto Alegre",
+                "state": "RS"
+            })
+        }).then(data => data.json())
+    }
+
     return (
         <>
             <Header />
-            <Container>
+            <Container onSubmit={handleAddressForm}>
                 <section>
                     <TitleContainers>Complete seu pedido</TitleContainers>
                     <FormAddress />
@@ -38,17 +60,17 @@ export function Checkout () {
                         </HeaderPaymentContainer>
                         <PaymentButtons>
                             <PaymentOption value="Credito">
-                                <CreditCard color="#8047F8" size={14} /> 
+                                <CreditCard color="#8047F8" size={14} />
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 CARTÃO DE CRÉDITO
                             </PaymentOption>
                             <PaymentOption value="Debito">
-                                <Bank color="#8047F8" size={14} /> 
+                                <Bank color="#8047F8" size={14} />
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 CARTÃO DE DÉBITO
                             </PaymentOption>
                             <PaymentOption value="Dinheiro">
-                                <Money color="#8047F8" size={14} /> 
+                                <Money color="#8047F8" size={14} />
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 DINHEIRO
                             </PaymentOption>
@@ -64,7 +86,7 @@ export function Checkout () {
                         </TotalItems>
                         <TotalItems>
                             <Description>Entrega</Description>
-                            <Price>R$ </Price>
+                            <Price>R$ 7,00</Price>
                         </TotalItems>
                         <Total>
                             <DescriptionTotal>Total</DescriptionTotal>

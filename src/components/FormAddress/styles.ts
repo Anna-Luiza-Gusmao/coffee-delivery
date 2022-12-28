@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const AddressForm = styled.form`
+export const AddressForm = styled.div`
     border-radius: 8px;
     background-color: ${props => props.theme['white-100']};
 
