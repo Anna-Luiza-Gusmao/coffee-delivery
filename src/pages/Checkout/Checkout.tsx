@@ -20,27 +20,43 @@ import {
 
 import { FormAddress } from "../../components/FormAddress";
 import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react';
-import { FormEvent } from "react";
+import { FormEvent, useContext } from "react";
+import { useNavigate } from "react-router";
+import { CoffeeContext } from '../../context'
 
 export function Checkout() {
+    const navigate = useNavigate()
+    const { coffees } = useContext(CoffeeContext);
+
     function handleAddressForm(event: FormEvent) {
         event.preventDefault();
 
-        fetch('http://localhost:3000/address', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "cep": "90250-440",
-                "street": "Rua João Daniel Martinelli",
-                "number": 102,
-                "complement": "Próximo a uma padaria",
-                "district": "Farrapos",
-                "city": "Porto Alegre",
-                "state": "RS"
-            })
-        }).then(data => data.json())
+        // fetch('http://localhost:3000/address', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         "cep": "90250-440",
+        //         "street": "Rua João Daniel Martinelli",
+        //         "number": 102,
+        //         "complement": "Próximo a uma padaria",
+        //         "district": "Farrapos",
+        //         "city": "Porto Alegre",
+        //         "state": "RS"
+        //     })
+        // }).then(data => data.json())
+
+        // coffees.map((coffee: any) =>
+        //     fetch(`http://localhost:3000/coffee/${coffee.id}`, {
+        //         method: 'PATCH',
+        //         headers: {
+        //         'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({ "amountCoffee":  0})
+        //     }).then(data => data.json())
+        // )
+        navigate('/success')
     }
 
     return (
