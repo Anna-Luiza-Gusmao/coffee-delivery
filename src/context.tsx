@@ -19,11 +19,12 @@ interface DataAddress {
     id: number,
     cep: string,
     street: string,
-    number: number,
+    number: string,
     complement: string,
     district: string,
     city: string,
-    state: string
+    state: string,
+    payment: string
 }
 
 export function CoffeeContextProvider ({children}: CoffeeContextProviderProps) {

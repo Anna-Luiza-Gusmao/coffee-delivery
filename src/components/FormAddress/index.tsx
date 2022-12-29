@@ -1,7 +1,54 @@
-import { AddressForm, HeaderAddressForm, SubTitle, Title, SmallerInput, AllInputs, StreetInput, InputComplement, CityInput, UFInput } from "./styles";
+import { ChangeEvent, useState } from "react";
+import { AddressForm, 
+    HeaderAddressForm, 
+    SubTitle, 
+    Title, 
+    SmallerInput, 
+    AllInputs, 
+    StreetInput, 
+    InputComplement, 
+    CityInput, 
+    UFInput 
+} from "./styles";
 import { MapPinLine } from 'phosphor-react'
 
 export function FormAddress() {
+    const [newCep, setNewCep] = useState("")
+    const [newStreet, setNewStreet] = useState("")
+    const [newNumber, setNewNumber] = useState("")
+    const [newComplement, setNewComplement] = useState("")
+    const [newDistrict, setNewDistrict] = useState("")
+    const [newCity, setNewCity] = useState("")
+    const [newState, setNewState] = useState("")
+
+    const handleCEP = (event: ChangeEvent<HTMLInputElement>) => {
+        setNewCep(event.target.value)
+    }
+
+    const handleStreet = (event: ChangeEvent<HTMLInputElement>) => {
+        setNewStreet(event.target.value)
+    }
+
+    const handleNumber = (event: ChangeEvent<HTMLInputElement>) => {
+        setNewNumber(event.target.value)
+    }
+
+    const handleComplement = (event: ChangeEvent<HTMLInputElement>) => {
+        setNewComplement(event.target.value)
+    }
+
+    const handleDistrict = (event: ChangeEvent<HTMLInputElement>) => {
+        setNewDistrict(event.target.value)
+    }
+
+    const handleCity = (event: ChangeEvent<HTMLInputElement>) => {
+        setNewCity(event.target.value)
+    }
+
+    const handleState = (event: ChangeEvent<HTMLInputElement>) => {
+        setNewState(event.target.value)
+    }
+
     return (
         <AddressForm>
             <HeaderAddressForm>
@@ -17,22 +64,30 @@ export function FormAddress() {
                     type="text"
                     placeholder="CEP"
                     required
+                    value={newCep}
+                    onChange={handleCEP}
                 />
                 <StreetInput
                     type="text"
                     placeholder="Rua"
                     required
+                    value={newStreet}
+                    onChange={handleStreet}
                 />
                 <div style={{ display: 'flex' }}>
                     <SmallerInput
                         type="text"
                         placeholder="Número"
                         required
+                        value={newNumber}
+                        onChange={handleNumber}
                     />
                     <span style={{ paddingLeft: '0.75rem' }}></span>
                     <InputComplement
                         type="text"
                         placeholder="Complemento"
+                        value={newComplement}
+                        onChange={handleComplement}
                     />
                 </div>
                 <div style={{ display: 'flex' }}>
@@ -40,18 +95,24 @@ export function FormAddress() {
                         type="text"
                         placeholder="Bairro"
                         required
+                        value={newDistrict}
+                        onChange={handleDistrict}
                     />
                     <span style={{ paddingLeft: '0.75rem' }}></span>
                     <CityInput
                         type="text"
                         placeholder="Cidade"
                         required
+                        value={newCity}
+                        onChange={handleCity}
                     />
                     <span style={{ paddingLeft: '0.75rem' }}></span>
                     <UFInput
                         type="text"
                         placeholder="UF"
                         required
+                        value={newState}
+                        onChange={handleState}
                     />
                 </div>
             </AllInputs>

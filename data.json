@@ -165,5 +165,17 @@
       "amountCoffee": 0
     }
   ],
-  "address": []
+  "address": [
+    {
+      "cep": "90250-440",
+      "street": "Rua João Daniel Martinelli",
+      "number": 102,
+      "complement": "Próximo a uma padaria",
+      "district": "Farrapos",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "payment": "Crédito",
+      "id": 2
+    }
+  ]
 }

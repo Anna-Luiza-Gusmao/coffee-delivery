@@ -38,7 +38,7 @@ export function Checkout() {
             body: JSON.stringify({
                 "cep": "90250-440",
                 "street": "Rua João Daniel Martinelli",
-                "number": 102,
+                "number": "102",
                 "complement": "Próximo a uma padaria",
                 "district": "Farrapos",
                 "city": "Porto Alegre",
