@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState, useEffect } from 'react'
+import { ReactNode, createContext, useState } from 'react'
 
 export const CoffeeContext = createContext({} as any)
 

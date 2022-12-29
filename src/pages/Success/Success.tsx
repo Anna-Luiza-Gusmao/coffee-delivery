@@ -1,4 +1,4 @@
-import { Header } from "../../components/Header";
+import { HeaderSuccess } from "../../components/HeaderSuccess";
 import { Card, Container, SubCard, SubTitle, Title, Description } from "./styles";
 
 import Delivery from '../../assets/delivery.svg'
@@ -21,24 +21,27 @@ export function Success() {
         setAddress(data);
     }
 
-    // coffees.map((coffee: any) =>
-    //     fetch(`http://localhost:3000/coffee/${coffee.id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //         'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ "amountCoffee":  0})
-    //     }).then(data => data.json())
-    // )
+    function resetAmountCoffee() {
+        coffees.map((coffee: any) =>
+            fetch(`http://localhost:3000/coffee/${coffee.id}`, {
+                method: 'PATCH',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "amountCoffee":  0})
+            }).then(data => data.json())
+        )
+    }
 
     useEffect(() => {
         loadAddress();
         setInitializing(true);
+        resetAmountCoffee();
     }, [initializing])
 
     return (
         <>
-            <Header />
+            <HeaderSuccess />
             <Container>
                 <div>
                     <Title>Uhu! Pedido confirmado</Title>
@@ -47,8 +50,7 @@ export function Success() {
                         <SubCard>
                             <img src={Map} />
                             <div style={{ paddingLeft: '0.75rem' }}>
-                                <Description>Entrega em <b>{address[0].street}, {address[0].number}</b></Description>
-                                <Description>{address[0].district} - {address[0].city}, {address[0].state}</Description>
+
                             </div>
                         </SubCard>
                         <SubCard>
@@ -62,7 +64,7 @@ export function Success() {
                             <img src={Cipher} />
                             <div style={{ paddingLeft: '0.75rem' }}>
                                 <Description>Pagamento na Entrega</Description>
-                                <Description><b>{address[0].payment}</b></Description>
+
                             </div>
                         </SubCard>
                     </Card>
