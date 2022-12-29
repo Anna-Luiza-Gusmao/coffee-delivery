@@ -11,7 +11,7 @@ import { useContext, useEffect, useState } from 'react'
 
 
 export function Success() {
-    const { coffees, address, setAddress } = useContext(CoffeeContext);
+    const { coffees, address, setAddress, setTotalAmountCoffee } = useContext(CoffeeContext);
     const [initializing, setInitializing] = useState(false)
 
     async function loadAddress() {
@@ -36,6 +36,7 @@ export function Success() {
     useEffect(() => {
         loadAddress();
         setInitializing(true);
+        setTotalAmountCoffee(0);
         resetAmountCoffee();
     }, [initializing])
 
@@ -50,7 +51,7 @@ export function Success() {
                         <SubCard>
                             <img src={Map} />
                             <div style={{ paddingLeft: '0.75rem' }}>
-
+                                
                             </div>
                         </SubCard>
                         <SubCard>
@@ -64,7 +65,7 @@ export function Success() {
                             <img src={Cipher} />
                             <div style={{ paddingLeft: '0.75rem' }}>
                                 <Description>Pagamento na Entrega</Description>
-
+                                
                             </div>
                         </SubCard>
                     </Card>

@@ -55,7 +55,7 @@
       "name": "Café com Leite",
       "description": "Meio a meio de expresso tradicional com leite vaporizado",
       "price": "9,90",
-      "amountCoffee": 1
+      "amountCoffee": 0
     },
     {
       "id": 6,
@@ -67,7 +67,7 @@
       "name": "Latte",
       "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
       "price": "9,90",
-      "amountCoffee": 1
+      "amountCoffee": 0
     },
     {
       "id": 7,
@@ -115,7 +115,7 @@
       "name": "Chocolate Quente",
       "description": "Bebida feita com chocolate dissolvido no leite quente e café",
       "price": "10,90",
-      "amountCoffee": 1
+      "amountCoffee": 0
     },
     {
       "id": 11,
@@ -128,7 +128,7 @@
       "name": "Cubano",
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
       "price": "12,90",
-      "amountCoffee": 1
+      "amountCoffee": 0
     },
     {
       "id": 12,
@@ -165,17 +165,5 @@
       "amountCoffee": 0
     }
   ],
-  "address": [
-    {
-      "cep": "90250-440",
-      "street": "Rua João Daniel Martinelli",
-      "number": 102,
-      "complement": "Próximo a uma padaria",
-      "district": "Farrapos",
-      "city": "Porto Alegre",
-      "state": "RS",
-      "payment": "Dinheiro",
-      "id": 1
-    }
-  ]
+  "address": []
 }
