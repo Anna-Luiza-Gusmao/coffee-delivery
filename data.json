@@ -31,7 +31,7 @@
       "name": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
       "price": "9,90",
-      "amountCoffee": 1
+      "amountCoffee": 3
     },
     {
       "id": 4,
@@ -128,7 +128,7 @@
       "name": "Cubano",
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
       "price": "12,90",
-      "amountCoffee": 0
+      "amountCoffee": 1
     },
     {
       "id": 12,
