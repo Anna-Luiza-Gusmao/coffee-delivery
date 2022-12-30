@@ -20,7 +20,7 @@
       "name": "Expresso Americano",
       "description": "Expresso diluído, menos intenso que o tradicional",
       "price": "9,90",
-      "amountCoffee": 1
+      "amountCoffee": 4
     },
     {
       "id": 3,
@@ -189,7 +189,5 @@
       "id": 2
     }
   ],
-  "request": [
-    
-  ]
+  "request": []
 }

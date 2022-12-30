@@ -37,6 +37,8 @@ export function CoffeeContextProvider ({children}: CoffeeContextProviderProps) {
 
     const [totalAmountCoffee, setTotalAmountCoffee] = useState(stateAmountCoffee)
 
+    const selectedCoffees: number[] = []
+
     return (
         <CoffeeContext.Provider value={{
 			coffees,
@@ -44,7 +46,8 @@ export function CoffeeContextProvider ({children}: CoffeeContextProviderProps) {
             totalAmountCoffee, 
             setTotalAmountCoffee,
             address, 
-            setAddress
+            setAddress,
+            selectedCoffees
 		}}
 		>
 			{children}
