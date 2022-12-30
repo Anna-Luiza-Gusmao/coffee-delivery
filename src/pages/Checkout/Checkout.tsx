@@ -26,6 +26,15 @@ import { useNavigate } from "react-router";
 export function Checkout() {
     const navigate = useNavigate()
     const [chosenPaymentOption, setChosenPaymentOption] = useState("")
+    const { render, 
+        newCep,
+        newStreet,
+        newNumber,
+        newComplement,
+        newDistrict,
+        newCity,
+        newState, 
+    } = FormAddress()
 
     function handleAddressForm(event: FormEvent) {
         event.preventDefault();
@@ -36,13 +45,13 @@ export function Checkout() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                "cep": "90250-440",
-                "street": "Rua João Daniel Martinelli",
-                "number": "102",
-                "complement": "Próximo a uma padaria",
-                "district": "Farrapos",
-                "city": "Porto Alegre",
-                "state": "RS",
+                "cep": newCep,
+                "street": newStreet,
+                "number": newNumber,
+                "complement": newComplement,
+                "district": newDistrict,
+                "city": newCity,
+                "state": newState,
                 "payment": chosenPaymentOption
             })
         }).then(data => data.json())
@@ -68,7 +77,7 @@ export function Checkout() {
             <Container onSubmit={handleAddressForm}>
                 <section>
                     <TitleContainers>Complete seu pedido</TitleContainers>
-                    <FormAddress />
+                    {render}
                     <PaymentContainer>
                         <HeaderPaymentContainer>
                             <CurrencyDollar color="#8047F8" size={24} />

@@ -167,15 +167,15 @@
   ],
   "address": [
     {
-      "cep": "90250-440",
-      "street": "Rua João Daniel Martinelli",
-      "number": 102,
-      "complement": "Próximo a uma padaria",
-      "district": "Farrapos",
-      "city": "Porto Alegre",
-      "state": "RS",
-      "payment": "Crédito",
-      "id": 2
+      "cep": "39401-423",
+      "street": "Perdizes",
+      "number": "190",
+      "complement": "Ao lado de uma casa de pedra",
+      "district": "Alcides Rabelo",
+      "city": "Montes Claros",
+      "state": "MG",
+      "payment": "Débito",
+      "id": 1
     }
   ]
 }

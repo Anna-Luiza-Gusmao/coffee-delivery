@@ -1,14 +1,15 @@
 import { ChangeEvent, useState } from "react";
-import { AddressForm, 
-    HeaderAddressForm, 
-    SubTitle, 
-    Title, 
-    SmallerInput, 
-    AllInputs, 
-    StreetInput, 
-    InputComplement, 
-    CityInput, 
-    UFInput 
+import {
+    AddressForm,
+    HeaderAddressForm,
+    SubTitle,
+    Title,
+    SmallerInput,
+    AllInputs,
+    StreetInput,
+    InputComplement,
+    CityInput,
+    UFInput
 } from "./styles";
 import { MapPinLine } from 'phosphor-react'
 
@@ -49,73 +50,82 @@ export function FormAddress() {
         setNewState(event.target.value)
     }
 
-    return (
-        <AddressForm>
-            <HeaderAddressForm>
-                <MapPinLine color="#C47F17" size={24} />
-                <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '0.5rem' }}>
-                    <Title>Endereço de Entrega</Title>
-                    <SubTitle>Informe o endereço onde deseja receber seu pedido</SubTitle>
-                </div>
-            </HeaderAddressForm>
+    return {
+        newCep,
+        newStreet,
+        newNumber,
+        newComplement,
+        newDistrict,
+        newCity,
+        newState,
+        render: (
+            <AddressForm>
+                <HeaderAddressForm>
+                    <MapPinLine color="#C47F17" size={24} />
+                    <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '0.5rem' }}>
+                        <Title>Endereço de Entrega</Title>
+                        <SubTitle>Informe o endereço onde deseja receber seu pedido</SubTitle>
+                    </div>
+                </HeaderAddressForm>
 
-            <AllInputs>
-                <SmallerInput
-                    type="text"
-                    placeholder="CEP"
-                    required
-                    value={newCep}
-                    onChange={handleCEP}
-                />
-                <StreetInput
-                    type="text"
-                    placeholder="Rua"
-                    required
-                    value={newStreet}
-                    onChange={handleStreet}
-                />
-                <div style={{ display: 'flex' }}>
+                <AllInputs>
                     <SmallerInput
                         type="text"
-                        placeholder="Número"
+                        placeholder="CEP"
                         required
-                        value={newNumber}
-                        onChange={handleNumber}
+                        value={newCep}
+                        onChange={handleCEP}
                     />
-                    <span style={{ paddingLeft: '0.75rem' }}></span>
-                    <InputComplement
+                    <StreetInput
                         type="text"
-                        placeholder="Complemento"
-                        value={newComplement}
-                        onChange={handleComplement}
-                    />
-                </div>
-                <div style={{ display: 'flex' }}>
-                    <SmallerInput
-                        type="text"
-                        placeholder="Bairro"
+                        placeholder="Rua"
                         required
-                        value={newDistrict}
-                        onChange={handleDistrict}
+                        value={newStreet}
+                        onChange={handleStreet}
                     />
-                    <span style={{ paddingLeft: '0.75rem' }}></span>
-                    <CityInput
-                        type="text"
-                        placeholder="Cidade"
-                        required
-                        value={newCity}
-                        onChange={handleCity}
-                    />
-                    <span style={{ paddingLeft: '0.75rem' }}></span>
-                    <UFInput
-                        type="text"
-                        placeholder="UF"
-                        required
-                        value={newState}
-                        onChange={handleState}
-                    />
-                </div>
-            </AllInputs>
-        </AddressForm>
-    )
+                    <div style={{ display: 'flex' }}>
+                        <SmallerInput
+                            type="text"
+                            placeholder="Número"
+                            required
+                            value={newNumber}
+                            onChange={handleNumber}
+                        />
+                        <span style={{ paddingLeft: '0.75rem' }}></span>
+                        <InputComplement
+                            type="text"
+                            placeholder="Complemento"
+                            value={newComplement}
+                            onChange={handleComplement}
+                        />
+                    </div>
+                    <div style={{ display: 'flex' }}>
+                        <SmallerInput
+                            type="text"
+                            placeholder="Bairro"
+                            required
+                            value={newDistrict}
+                            onChange={handleDistrict}
+                        />
+                        <span style={{ paddingLeft: '0.75rem' }}></span>
+                        <CityInput
+                            type="text"
+                            placeholder="Cidade"
+                            required
+                            value={newCity}
+                            onChange={handleCity}
+                        />
+                        <span style={{ paddingLeft: '0.75rem' }}></span>
+                        <UFInput
+                            type="text"
+                            placeholder="UF"
+                            required
+                            value={newState}
+                            onChange={handleState}
+                        />
+                    </div>
+                </AllInputs>
+            </AddressForm>
+        )
+    }
 }

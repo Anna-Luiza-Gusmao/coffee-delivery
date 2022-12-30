@@ -67,6 +67,7 @@ export const PaymentOption = styled.button`
     }
     &:focus {
         box-shadow: 0 0 0 1px ${(props) => props.theme['purple-300']};
+        background: ${props => props.theme['purple-100']};
     }
 `
 
