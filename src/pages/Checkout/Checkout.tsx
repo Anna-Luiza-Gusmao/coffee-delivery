@@ -22,11 +22,13 @@ import { FormAddress } from "../../components/FormAddress"
 import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react'
 import { FormEvent, useState } from "react"
 import { useNavigate } from "react-router"
+import { SelectedCoffee } from "../../components/SelectedCoffee"
 
 export function Checkout() {
     const navigate = useNavigate()
     const [chosenPaymentOption, setChosenPaymentOption] = useState("")
-    const { render, 
+    const { 
+        render, 
         newCep,
         newStreet,
         newNumber,
@@ -108,6 +110,7 @@ export function Checkout() {
                 <section>
                     <TitleContainers>Cafés selecionados</TitleContainers>
                     <CoffeContainer>
+                        <SelectedCoffee />
                         <TotalItems>
                             <Description>Total de itens</Description>
                             <Price>R$ </Price>
