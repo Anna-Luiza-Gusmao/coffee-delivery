@@ -1,4 +1,4 @@
-import { Header } from "../../components/Header";
+import { Header } from "../../components/Header"
 import {
     Container,
     TitleContainers,
@@ -16,12 +16,12 @@ import {
     Total,
     DescriptionTotal,
     TotalPrice
-} from "./styles";
+} from "./styles"
 
-import { FormAddress } from "../../components/FormAddress";
-import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react';
-import { FormEvent, useState } from "react";
-import { useNavigate } from "react-router";
+import { FormAddress } from "../../components/FormAddress"
+import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react'
+import { FormEvent, useState } from "react"
+import { useNavigate } from "react-router"
 
 export function Checkout() {
     const navigate = useNavigate()
@@ -36,7 +36,7 @@ export function Checkout() {
         newState, 
     } = FormAddress()
 
-    function handleAddressForm(event: FormEvent) {
+    async function handleAddressForm(event: FormEvent) {
         event.preventDefault();
 
         fetch('http://localhost:3000/address', {

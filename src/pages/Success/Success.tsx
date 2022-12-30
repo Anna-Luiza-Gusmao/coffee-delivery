@@ -51,8 +51,8 @@ export function Success() {
                         <SubCard>
                             <img src={Map} />
                             <div style={{ paddingLeft: '0.75rem' }}>
-                                <Description>Entrega em <b>{address[0].street}, {address[0].number}</b></Description>
-                                <Description>{address[0].district} - {address[0].city}, {address[0].state}</Description>
+                                <Description>Entrega em <b>{address[address.length -1].street}, {address[address.length -1].number}</b></Description>
+                                <Description>{address[address.length -1].district} - {address[address.length -1].city}, {address[address.length -1].state}</Description>
                             </div>
                         </SubCard>
                         <SubCard>
@@ -66,7 +66,7 @@ export function Success() {
                             <img src={Cipher} />
                             <div style={{ paddingLeft: '0.75rem' }}>
                                 <Description>Pagamento na Entrega</Description>
-                                <Description><b>{address[0].payment}</b></Description>
+                                <Description><b>{address[address.length -1].payment}</b></Description>
                             </div>
                         </SubCard>
                     </Card>

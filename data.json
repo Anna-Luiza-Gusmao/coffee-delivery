@@ -167,15 +167,37 @@
   ],
   "address": [
     {
-      "cep": "39401-423",
-      "street": "Perdizes",
-      "number": "190",
-      "complement": "Ao lado de uma casa de pedra",
-      "district": "Alcides Rabelo",
-      "city": "Montes Claros",
-      "state": "MG",
-      "payment": "Débito",
+      "cep": "teste",
+      "street": "teste",
+      "number": "teste",
+      "complement": "",
+      "district": "teste",
+      "city": "teste",
+      "state": "tes",
+      "payment": "Crédito",
       "id": 1
+    },
+    {
+      "cep": "aaaaaa",
+      "street": "aaaaaaaa",
+      "number": "aaa",
+      "complement": "aaaa",
+      "district": "aaaaaaaaaaaa",
+      "city": "aaaaaaaa",
+      "state": "aa",
+      "payment": "Crédito",
+      "id": 2
+    },
+    {
+      "cep": "23232323",
+      "street": "rrrrrrrr",
+      "number": "rrrrrrrrr",
+      "complement": "",
+      "district": "rrrrrrrrrrrrr",
+      "city": "rrrrrrrrrrrrrr",
+      "state": "rrrrrr",
+      "payment": "Débito",
+      "id": 3
     }
   ]
 }
