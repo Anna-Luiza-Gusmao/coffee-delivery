@@ -9,7 +9,7 @@
       "name": "Expresso Tradicional",
       "description": "O tradicional café feito com água quente e grãos moídos",
       "price": "9,90",
-      "amountCoffee": 0
+      "amountCoffee": 2
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
       "name": "Expresso Americano",
       "description": "Expresso diluído, menos intenso que o tradicional",
       "price": "9,90",
-      "amountCoffee": 0
+      "amountCoffee": 1
     },
     {
       "id": 3,
@@ -178,26 +178,18 @@
       "id": 1
     },
     {
-      "cep": "aaaaaa",
-      "street": "aaaaaaaa",
-      "number": "aaa",
-      "complement": "aaaa",
-      "district": "aaaaaaaaaaaa",
-      "city": "aaaaaaaa",
-      "state": "aa",
-      "payment": "Crédito",
-      "id": 2
-    },
-    {
-      "cep": "23232323",
-      "street": "rrrrrrrr",
-      "number": "rrrrrrrrr",
+      "cep": "q",
+      "street": "q",
+      "number": "qq",
       "complement": "",
-      "district": "rrrrrrrrrrrrr",
-      "city": "rrrrrrrrrrrrrr",
-      "state": "rrrrrr",
-      "payment": "Débito",
-      "id": 3
+      "district": "q",
+      "city": "q",
+      "state": "q",
+      "payment": "Dinheiro",
+      "id": 2
     }
+  ],
+  "request": [
+    
   ]
 }
