@@ -20,10 +20,7 @@ export const Title = styled.h1`
     color: ${props => props.theme['gray-800']};
 
     padding-bottom: 1rem;
-    margin-right: 30rem;
-    @media (max-width: 1366px){
-        margin-right: 5rem;
-    }
+    margin-right: 5rem;
 `
 
 export const SubTitle = styled.p`
@@ -31,7 +28,7 @@ export const SubTitle = styled.p`
     font-weight: 400; 
     font-size: 1.25rem;
 
-    margin-right: 30rem;
+    margin-right: 10rem;
     @media (max-width: 1366px){
         margin-right: 5rem;
     }
@@ -49,7 +46,7 @@ export const CharacterContainer = styled.section`
     row-gap: 0.5rem;
 
     margin-top: 4.125rem;
-    margin-right: 25rem;
+    margin-right: 5rem;
 
     @media (min-width: 768px) and (max-width: 1366px){
         margin-right: 0;
