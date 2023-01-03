@@ -26,9 +26,9 @@ export function Success() {
             fetch(`http://localhost:3000/coffee/${coffee.id}`, {
                 method: 'PATCH',
                 headers: {
-                'Content-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ "amountCoffee":  0})
+                body: JSON.stringify({ "amountCoffee": 0 })
             }).then(data => data.json())
         )
     }
@@ -43,36 +43,38 @@ export function Success() {
     return (
         <>
             <HeaderSuccess />
-            <Container>
-                <div>
-                    <Title>Uhu! Pedido confirmado</Title>
-                    <SubTitle>Agora é só aguardar que logo o café chegará até você</SubTitle>
-                    <Card>
-                        <SubCard>
-                            <img src={Map} />
-                            <div style={{ paddingLeft: '0.75rem' }}>
-                                <Description>Entrega em <b>{address[address.length -1].street}, {address[address.length -1].number}</b></Description>
-                                <Description>{address[address.length -1].district} - {address[address.length -1].city}, {address[address.length -1].state}</Description>
-                            </div>
-                        </SubCard>
-                        <SubCard>
-                            <img src={Timer} />
-                            <div style={{ paddingLeft: '0.75rem' }}>
-                                <Description>Previsão de Entrega</Description>
-                                <Description><b>20 min - 30 min</b></Description>
-                            </div>
-                        </SubCard>
-                        <SubCard>
-                            <img src={Cipher} />
-                            <div style={{ paddingLeft: '0.75rem' }}>
-                                <Description>Pagamento na Entrega</Description>
-                                <Description><b>{address[address.length -1].payment}</b></Description>
-                            </div>
-                        </SubCard>
-                    </Card>
-                </div>
-                <img src={Delivery} />
-            </Container>
+            {
+                (address.length !== 0) && <Container>
+                    <div>
+                        <Title>Uhu! Pedido confirmado</Title>
+                        <SubTitle>Agora é só aguardar que logo o café chegará até você</SubTitle>
+                        <Card>
+                            <SubCard>
+                                <img src={Map} />
+                                <div style={{ paddingLeft: '0.75rem' }}>
+                                    <Description>Entrega em <b>{address[address.length - 1].street}, {address[address.length - 1].number}</b></Description>
+                                    <Description>{address[address.length - 1].district} - {address[address.length - 1].city}, {address[address.length - 1].state}</Description>
+                                </div>
+                            </SubCard>
+                            <SubCard>
+                                <img src={Timer} />
+                                <div style={{ paddingLeft: '0.75rem' }}>
+                                    <Description>Previsão de Entrega</Description>
+                                    <Description><b>20 min - 30 min</b></Description>
+                                </div>
+                            </SubCard>
+                            <SubCard>
+                                <img src={Cipher} />
+                                <div style={{ paddingLeft: '0.75rem' }}>
+                                    <Description>Pagamento na Entrega</Description>
+                                    <Description><b>{address[address.length - 1].payment}</b></Description>
+                                </div>
+                            </SubCard>
+                        </Card>
+                    </div>
+                    <img src={Delivery} />
+                </Container>
+            }
         </>
     )
 } 
