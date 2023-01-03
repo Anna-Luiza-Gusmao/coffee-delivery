@@ -167,48 +167,26 @@
   ],
   "address": [
     {
-      "cep": "teste",
-      "street": "teste",
-      "number": "teste",
+      "cep": "22.322-222",
+      "street": "z",
+      "number": "z",
       "complement": "",
-      "district": "teste",
-      "city": "teste",
-      "state": "tes",
-      "payment": "Crédito",
+      "district": "z",
+      "city": "z",
+      "state": "z",
+      "payment": "Dinheiro",
       "id": 1
     },
     {
-      "cep": "q",
-      "street": "q",
-      "number": "qq",
-      "complement": "",
-      "district": "q",
-      "city": "q",
-      "state": "q",
-      "payment": "Dinheiro",
-      "id": 2
-    },
-    {
-      "cep": "a",
-      "street": "d",
-      "number": "d",
-      "complement": "",
-      "district": "d",
-      "city": "d",
-      "state": "d",
-      "payment": "Dinheiro",
-      "id": 3
-    },
-    {
-      "cep": "aaaaa",
+      "cep": "23232-322",
       "street": "a",
       "number": "a",
       "complement": "",
       "district": "a",
-      "city": "a",
-      "state": "a",
-      "payment": "Dinheiro",
-      "id": 4
+      "city": "aaaaaa",
+      "state": "AA",
+      "payment": "Débito",
+      "id": 2
     }
   ],
   "request": []

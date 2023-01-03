@@ -12,6 +12,7 @@ import {
     UFInput
 } from "./styles";
 import { MapPinLine } from 'phosphor-react'
+import MaskedInput from 'react-text-mask'
 
 export function FormAddress() {
     const [newCep, setNewCep] = useState("")
@@ -47,7 +48,7 @@ export function FormAddress() {
     }
 
     const handleState = (event: ChangeEvent<HTMLInputElement>) => {
-        setNewState(event.target.value)
+        setNewState(event.target.value.toUpperCase())
     }
 
     return {
@@ -69,12 +70,14 @@ export function FormAddress() {
                 </HeaderAddressForm>
 
                 <AllInputs>
-                    <SmallerInput
-                        type="text"
+                    <MaskedInput
+                        mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]}
                         placeholder="CEP"
-                        required
                         value={newCep}
                         onChange={handleCEP}
+                        render={(ref, props) => (
+                            <SmallerInput ref={ref} {...props} />
+                        )}
                     />
                     <StreetInput
                         type="text"
@@ -122,6 +125,7 @@ export function FormAddress() {
                             required
                             value={newState}
                             onChange={handleState}
+                            maxLength={2}
                         />
                     </div>
                 </AllInputs>
