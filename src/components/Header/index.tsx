@@ -7,18 +7,8 @@ import { CoffeeContext } from '../../context'
 import { useNavigate } from 'react-router-dom'
 
 export function Header() {
-    const { coffees, totalAmountCoffee, selectedCoffees } = useContext(CoffeeContext)
+    const { totalAmountCoffee } = useContext(CoffeeContext)
     const navigate = useNavigate()
-
-    coffees.map((coffee: any) => {
-        if (coffee.amountCoffee > 0) {
-            if (selectedCoffees.indexOf(coffee.id) == -1){
-                selectedCoffees.push(coffee.id)
-            }
-        }
-    })
-
-    console.log(selectedCoffees)
 
     // fetch('http://localhost:3000/request', {
     //     method: 'POST',

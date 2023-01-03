@@ -9,7 +9,7 @@
       "name": "Expresso Tradicional",
       "description": "O tradicional café feito com água quente e grãos moídos",
       "price": "9,90",
-      "amountCoffee": 1
+      "amountCoffee": 2
     },
     {
       "id": 2,
@@ -31,7 +31,7 @@
       "name": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
       "price": "9,90",
-      "amountCoffee": 2
+      "amountCoffee": 1
     },
     {
       "id": 4,
@@ -79,7 +79,7 @@
       "name": "Capuccino",
       "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
       "price": "9,90",
-      "amountCoffee": 2
+      "amountCoffee": 0
     },
     {
       "id": 8,
@@ -128,7 +128,7 @@
       "name": "Cubano",
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
       "price": "12,90",
-      "amountCoffee": 1
+      "amountCoffee": 0
     },
     {
       "id": 12,
@@ -176,6 +176,28 @@
       "state": "MG",
       "payment": "Débito",
       "id": 1
+    },
+    {
+      "cep": "22222-222",
+      "street": "Mare",
+      "number": "152",
+      "complement": "",
+      "district": "Ipatinga",
+      "city": "Montes Claros",
+      "state": "MG",
+      "payment": "Débito",
+      "id": 2
+    },
+    {
+      "cep": "22222-222",
+      "street": "teste",
+      "number": "123",
+      "complement": "",
+      "district": "teste",
+      "city": "teste",
+      "state": "TT",
+      "payment": "Débito",
+      "id": 3
     }
   ],
   "request": []
