@@ -1,4 +1,4 @@
-import { Container, TitleCoffee, PriceCoffee, ButtonRemove, Divider } from "./styles"
+import { Container, TitleCoffee, PriceCoffee, ButtonRemove, Divider, ImageCoffee } from "./styles"
 import { Trash } from 'phosphor-react'
 
 import Teste from '../../assets/coffees/coffee1.png'
@@ -26,7 +26,7 @@ export function SelectedCoffee({ initialize }: SelectedCoffeeProps) {
         selectedCoffees.map((coffee: number) => (
             <div key={coffee}>
                 <Container>
-                    <img src={Teste} />
+                    <ImageCoffee src={Teste} />
                     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                         <TitleCoffee>Expresso Tradicional</TitleCoffee>
                         <div style={{ display: 'flex' }}>

@@ -9,7 +9,7 @@
       "name": "Expresso Tradicional",
       "description": "O tradicional café feito com água quente e grãos moídos",
       "price": "9,90",
-      "amountCoffee": 2
+      "amountCoffee": 0
     },
     {
       "id": 2,
@@ -31,7 +31,7 @@
       "name": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
       "price": "9,90",
-      "amountCoffee": 1
+      "amountCoffee": 0
     },
     {
       "id": 4,
@@ -198,6 +198,17 @@
       "state": "TT",
       "payment": "Débito",
       "id": 3
+    },
+    {
+      "cep": "39401-423",
+      "street": "RUA PERDIS",
+      "number": "190",
+      "complement": "190",
+      "district": "Alcides Rabelo",
+      "city": "MONTES CLAROS",
+      "state": "MG",
+      "payment": "Crédito",
+      "id": 4
     }
   ],
   "request": []
