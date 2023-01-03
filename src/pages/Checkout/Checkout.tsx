@@ -20,9 +20,10 @@ import {
 
 import { FormAddress } from "../../components/FormAddress"
 import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react'
-import { FormEvent, useState } from "react"
+import { FormEvent, useState, useContext, useEffect } from "react"
 import { useNavigate } from "react-router"
 import { SelectedCoffee } from "../../components/SelectedCoffee"
+import { CoffeeContext } from '../../context'
 
 export function Checkout() {
     const navigate = useNavigate()
@@ -37,6 +38,9 @@ export function Checkout() {
         newCity,
         newState, 
     } = FormAddress()
+
+    const { setCoffees } = useContext(CoffeeContext)
+    const [initializing, setInitializing] = useState(false)
 
     async function handleAddressForm(event: FormEvent) {
         event.preventDefault();
@@ -82,6 +86,21 @@ export function Checkout() {
         newCity === '' || 
         newState === ''
     )
+
+    async function loadCoffees() {
+        const response = await fetch('http://localhost:3000/coffee');
+        const data = await response.json();
+
+        setCoffees(data);
+    }
+
+    const initialize = () => {
+        setInitializing(!initializing)
+    }
+
+    useEffect (() => {
+        loadCoffees();
+    }, [initializing])
     
     return (
         <>
@@ -120,7 +139,7 @@ export function Checkout() {
                 <section>
                     <TitleContainers>Cafés selecionados</TitleContainers>
                     <CoffeContainer>
-                        <SelectedCoffee />
+                        <SelectedCoffee initialize={initialize} />
                         <TotalItems>
                             <Description>Total de itens</Description>
                             <Price>R$ </Price>

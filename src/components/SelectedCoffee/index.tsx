@@ -4,7 +4,11 @@ import { Trash } from 'phosphor-react'
 import Teste from '../../assets/coffees/coffee1.png'
 import { MutedPriceCoffee } from "../MutedPriceCoffee"
 
-export function SelectedCoffee () {
+interface SelectedCoffeeProps {
+    initialize: () => void
+}
+
+export function SelectedCoffee ({initialize}: SelectedCoffeeProps) {
     return (
         <>
             <Container>
@@ -12,7 +16,7 @@ export function SelectedCoffee () {
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     <TitleCoffee>Expresso Tradicional</TitleCoffee>
                     <div style={{display: 'flex'}}>
-                        <MutedPriceCoffee id={1} amountCoffee={2}/>
+                        <MutedPriceCoffee id={1} amountCoffee={2} setInitializing={initialize}/>
                         <ButtonRemove type="button">
                             <Trash color="#8047F8" size={14} />
                             <span style={{ paddingLeft: '0.5rem' }}></span>
