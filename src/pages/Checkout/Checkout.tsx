@@ -72,6 +72,16 @@ export function Checkout() {
     const paymentOptionDinheiro = () => {
         setChosenPaymentOption("Dinheiro")
     }
+
+    const checkOptionPayment = (
+        chosenPaymentOption === '' || 
+        newCep === '' || 
+        newStreet === '' || 
+        newNumber === '' || 
+        newDistrict === '' || 
+        newCity === '' || 
+        newState === ''
+    )
     
     return (
         <>
@@ -104,7 +114,7 @@ export function Checkout() {
                                 <span style={{ paddingLeft: '0.5rem' }}></span>
                                 DINHEIRO
                             </PaymentOption>
-                        </PaymentButtons>
+                        </PaymentButtons>  
                     </PaymentContainer>
                 </section>
                 <section>
@@ -123,7 +133,7 @@ export function Checkout() {
                             <DescriptionTotal>Total</DescriptionTotal>
                             <TotalPrice>R$ </TotalPrice>
                         </Total>
-                        <ConfirmButton type="submit">CONFIRMAR PEDIDO</ConfirmButton>
+                        <ConfirmButton type="submit" disabled={checkOptionPayment}>CONFIRMAR PEDIDO</ConfirmButton>
                     </CoffeContainer>
                 </section>
             </Container>

@@ -9,7 +9,7 @@
       "name": "Expresso Tradicional",
       "description": "O tradicional café feito com água quente e grãos moídos",
       "price": "9,90",
-      "amountCoffee": 1
+      "amountCoffee": 3
     },
     {
       "id": 2,
@@ -187,6 +187,28 @@
       "state": "q",
       "payment": "Dinheiro",
       "id": 2
+    },
+    {
+      "cep": "a",
+      "street": "d",
+      "number": "d",
+      "complement": "",
+      "district": "d",
+      "city": "d",
+      "state": "d",
+      "payment": "Dinheiro",
+      "id": 3
+    },
+    {
+      "cep": "aaaaa",
+      "street": "a",
+      "number": "a",
+      "complement": "",
+      "district": "a",
+      "city": "a",
+      "state": "a",
+      "payment": "Dinheiro",
+      "id": 4
     }
   ],
   "request": []
