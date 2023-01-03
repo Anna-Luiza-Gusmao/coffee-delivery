@@ -4,10 +4,11 @@ import { CoffeeContext } from '../../context'
 
 interface MutedPriceCoffeeProps {
     id: number,
-    amountCoffee: number
+    amountCoffee: number,
+    setInitializing: () => void
 }
 
-export function MutedPriceCoffee({id, amountCoffee}: MutedPriceCoffeeProps) {
+export function MutedPriceCoffee({id, amountCoffee, setInitializing}: MutedPriceCoffeeProps) {
     const { setTotalAmountCoffee, totalAmountCoffee } = useContext(CoffeeContext);
 
     function handleIncreaseAmount(id: number, currentAmount: number){
@@ -20,7 +21,7 @@ export function MutedPriceCoffee({id, amountCoffee}: MutedPriceCoffeeProps) {
         }).then(data => data.json())
 
         setTotalAmountCoffee(totalAmountCoffee + 1)
-        //setInitializing(!initializing)
+        setInitializing()
     }
 
     function handleDecreaseAmount(id: number, currentAmount: number){
@@ -41,7 +42,7 @@ export function MutedPriceCoffee({id, amountCoffee}: MutedPriceCoffeeProps) {
         }else{
             setTotalAmountCoffee(totalAmountCoffee - 1)
         }
-        //setInitializing(!initializing)
+        setInitializing()
     }
 
     return (

@@ -20,9 +20,10 @@ import { useState, useEffect, useContext } from 'react'
 import { CoffeeContext } from '../../context'
 import { useNavigate } from "react-router-dom"
 import { ContainerHome } from "../../components/ContainerHome"
+import { MutedPriceCoffee } from "../../components/MutedPriceCoffee"
 
 export function Home () {
-    const { coffees, setCoffees, setTotalAmountCoffee, totalAmountCoffee } = useContext(CoffeeContext);
+    const { coffees, setCoffees, totalAmountCoffee } = useContext(CoffeeContext);
     const [initializing, setInitializing] = useState(false)
 
     async function loadCoffees() {
@@ -37,47 +38,17 @@ export function Home () {
         localStorage.setItem('@coffee-delivery: amountCoffee-state-1.0.0', stateAmountCoffee)
     }
 
+    const initialize = () => {
+        setInitializing(!initializing)
+    }
+
+    const navigate = useNavigate()
+
     useEffect (() => {
         loadCoffees();
         setInitializing(true);
         updateLocalStorage();
     }, [initializing])
-
-    function handleIncreaseAmount(id: number, currentAmount: number){
-        fetch(`http://localhost:3000/coffee/${id}`, {
-            method: 'PATCH',
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ "amountCoffee":  currentAmount + 1 })
-        }).then(data => data.json())
-
-        setTotalAmountCoffee(totalAmountCoffee + 1)
-        setInitializing(!initializing)
-    }
-
-    function handleDecreaseAmount(id: number, currentAmount: number){
-        currentAmount = currentAmount - 1
-
-        if(currentAmount < 0) currentAmount = 0
-
-        fetch(`http://localhost:3000/coffee/${id}`, {
-            method: 'PATCH',
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ "amountCoffee":  currentAmount })
-        }).then(data => data.json())
-
-        if (totalAmountCoffee == 0) {
-            setTotalAmountCoffee(0)
-        }else{
-            setTotalAmountCoffee(totalAmountCoffee - 1)
-        }
-        setInitializing(!initializing)
-    }
-
-    const navigate = useNavigate()
 
     return (
         <>
@@ -103,11 +74,7 @@ export function Home () {
                                         <PriceCoffee>{coffee.price}</PriceCoffee>
                                     </div>
                                     <div style={{display: 'flex'}}>
-                                        <AlterPriceContainer>
-                                            <AlterPriceButton onClick={() => handleDecreaseAmount(coffee.id, coffee.amountCoffee)}>-</AlterPriceButton>
-                                            <span style={{fontSize: '1rem', padding: '0 0.25rem'}}>{coffee.amountCoffee}</span>
-                                            <AlterPriceButton onClick={() => handleIncreaseAmount(coffee.id, coffee.amountCoffee)}>+</AlterPriceButton>
-                                        </AlterPriceContainer>
+                                        <MutedPriceCoffee id={coffee.id} amountCoffee={coffee.amountCoffee} setInitializing={initialize} />
                                         <ButtonCart onClick={() => navigate('/checkout')}><img src={CartCoffeeContainer} /></ButtonCart>
                                     </div>
                                 </PriceContainer>
