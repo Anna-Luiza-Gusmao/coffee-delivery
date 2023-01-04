@@ -39,7 +39,7 @@ export function Checkout() {
         newState, 
     } = FormAddress()
 
-    const { setCoffees } = useContext(CoffeeContext)
+    const { setCoffees, sumOfCoffeesPrice } = useContext(CoffeeContext)
     const [initializing, setInitializing] = useState(false)
 
     async function handleAddressForm(event: FormEvent) {
@@ -142,7 +142,7 @@ export function Checkout() {
                         <SelectedCoffee initialize={initialize} />
                         <TotalItems>
                             <Description>Total de itens</Description>
-                            <Price>R$ </Price>
+                            <Price>R$ {sumOfCoffeesPrice}</Price>
                         </TotalItems>
                         <TotalItems>
                             <Description>Entrega</Description>

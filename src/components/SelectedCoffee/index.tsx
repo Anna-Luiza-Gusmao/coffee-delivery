@@ -31,7 +31,7 @@ const BaseDataCoffeesSelected = [
 ]
 
 export function SelectedCoffee({ initialize }: ISelectedCoffeeProps) {
-    const { coffees } = useContext(CoffeeContext)
+    const { coffees, setSumOfCoffeesPrice } = useContext(CoffeeContext)
     const selectedCoffees: number[] = []
     let allCoffeesSelected: IDataCoffeesSelected[] = []
 
@@ -69,8 +69,7 @@ export function SelectedCoffee({ initialize }: ISelectedCoffeeProps) {
 
         return totalPriceCoffees
     }
-    const sumOfCoffeesPrice = (calculateTotalItems()).toFixed(2)
-    console.log(sumOfCoffeesPrice)
+    setSumOfCoffeesPrice((calculateTotalItems()).toFixed(2).replace(".", ","))
 
     return (
         <>
