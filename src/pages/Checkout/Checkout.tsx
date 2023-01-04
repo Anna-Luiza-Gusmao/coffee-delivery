@@ -101,6 +101,9 @@ export function Checkout() {
     useEffect (() => {
         loadCoffees();
     }, [initializing])
+
+    const deliveryPrice = 7.0
+    const totalWithDeliveryPrice = deliveryPrice + sumOfCoffeesPrice
     
     return (
         <>
@@ -142,7 +145,7 @@ export function Checkout() {
                         <SelectedCoffee initialize={initialize} />
                         <TotalItems>
                             <Description>Total de itens</Description>
-                            <Price>R$ {sumOfCoffeesPrice}</Price>
+                            <Price>R$ {parseFloat(sumOfCoffeesPrice).toFixed(2).replace(".", ",")}</Price>
                         </TotalItems>
                         <TotalItems>
                             <Description>Entrega</Description>
@@ -150,7 +153,7 @@ export function Checkout() {
                         </TotalItems>
                         <Total>
                             <DescriptionTotal>Total</DescriptionTotal>
-                            <TotalPrice>R$ </TotalPrice>
+                            <TotalPrice>R$ {parseFloat(totalWithDeliveryPrice).toFixed(2).replace(".", ",")}</TotalPrice>
                         </Total>
                         <ConfirmButton type="submit" disabled={checkOptionPayment}>CONFIRMAR PEDIDO</ConfirmButton>
                     </CoffeContainer>

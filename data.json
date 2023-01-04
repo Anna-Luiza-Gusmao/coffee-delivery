@@ -31,7 +31,7 @@
       "name": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
       "price": 9.9,
-      "amountCoffee": 1
+      "amountCoffee": 0
     },
     {
       "id": 4,
@@ -128,7 +128,7 @@
       "name": "Cubano",
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
       "price": 12.9,
-      "amountCoffee": 2
+      "amountCoffee": 0
     },
     {
       "id": 12,
@@ -209,6 +209,17 @@
       "state": "MG",
       "payment": "Crédito",
       "id": 4
+    },
+    {
+      "cep": "39401-423",
+      "street": "RUA PERDIS",
+      "number": "190",
+      "complement": "190",
+      "district": "Alcides",
+      "city": "MONTES CLAROS",
+      "state": "MG",
+      "payment": "Crédito",
+      "id": 5
     }
   ],
   "request": []

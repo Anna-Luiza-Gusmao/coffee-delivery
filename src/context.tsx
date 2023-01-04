@@ -36,7 +36,7 @@ export function CoffeeContextProvider ({children}: CoffeeContextProviderProps) {
     if (amountCoffeeLocalStorage != null) stateAmountCoffee = parseInt(amountCoffeeLocalStorage)
 
     const [totalAmountCoffee, setTotalAmountCoffee] = useState(stateAmountCoffee)
-    const [sumOfCoffeesPrice, setSumOfCoffeesPrice] = useState("0,00")
+    const [sumOfCoffeesPrice, setSumOfCoffeesPrice] = useState(0.00)
 
     return (
         <CoffeeContext.Provider value={{

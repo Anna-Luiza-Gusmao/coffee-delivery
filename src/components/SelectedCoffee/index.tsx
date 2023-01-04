@@ -69,7 +69,7 @@ export function SelectedCoffee({ initialize }: ISelectedCoffeeProps) {
 
         return totalPriceCoffees
     }
-    setSumOfCoffeesPrice((calculateTotalItems()).toFixed(2).replace(".", ","))
+    setSumOfCoffeesPrice(calculateTotalItems())
 
     return (
         <>
