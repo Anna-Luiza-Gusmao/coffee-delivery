@@ -91,7 +91,7 @@
       "name": "Macchiato",
       "description": "Café expresso misturado com um pouco de leite quente e espuma",
       "price": 10.9,
-      "amountCoffee": 1
+      "amountCoffee": 0
     },
     {
       "id": 9,
@@ -165,5 +165,7 @@
       "amountCoffee": 0
     }
   ],
-  "address": []
+  "address": [
+    
+  ]
 }
