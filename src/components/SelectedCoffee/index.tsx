@@ -1,12 +1,12 @@
 import { Container, TitleCoffee, PriceCoffee, ButtonRemove, Divider, ImageCoffee } from "./styles"
 import { Trash } from 'phosphor-react'
 
-import Teste from '../../assets/coffees/coffee1.png'
 import { MutedPriceCoffee } from "../MutedPriceCoffee"
 
 import { useContext } from 'react'
 import { CoffeeContext } from '../../context'
 import produce from "immer"
+import { useNavigate } from "react-router-dom"
 
 interface SelectedCoffeeProps {
     initialize: () => void
@@ -27,6 +27,8 @@ export function SelectedCoffee({ initialize }: SelectedCoffeeProps) {
     const selectedCoffees: number[] = []
     let allCoffeesSelected: any[] = []
 
+    const navigate = useNavigate()
+
     coffees.map((coffee: any) => {
         if (coffee.amountCoffee > 0) {
             if (selectedCoffees.indexOf(coffee.id) == -1) {
@@ -37,6 +39,8 @@ export function SelectedCoffee({ initialize }: SelectedCoffeeProps) {
             }
         }
     })
+
+    if(allCoffeesSelected.length === 0) navigate('/')
 
     return (
         allCoffeesSelected.map((item) => (
