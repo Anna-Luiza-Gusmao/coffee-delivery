@@ -3,13 +3,21 @@ import { Trash } from 'phosphor-react'
 
 import { MutedPriceCoffee } from "../MutedPriceCoffee"
 
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { CoffeeContext } from '../../context'
 import produce from "immer"
 import { useNavigate } from "react-router-dom"
 
-interface SelectedCoffeeProps {
+interface ISelectedCoffeeProps {
     initialize: () => void
+}
+
+interface IDataCoffeesSelected {
+    id: number,
+    image: string,
+    name: string,
+    price: string,
+    amountCoffee: number
 }
 
 const BaseDataCoffeesSelected = [
@@ -22,10 +30,10 @@ const BaseDataCoffeesSelected = [
     }
 ]
 
-export function SelectedCoffee({ initialize }: SelectedCoffeeProps) {
+export function SelectedCoffee({ initialize }: ISelectedCoffeeProps) {
     const { coffees } = useContext(CoffeeContext)
     const selectedCoffees: number[] = []
-    let allCoffeesSelected: any[] = []
+    let allCoffeesSelected: IDataCoffeesSelected[] = []
 
     const navigate = useNavigate()
 
@@ -52,10 +60,17 @@ export function SelectedCoffee({ initialize }: SelectedCoffeeProps) {
         }).then(data => data.json())
     }
 
-    const [totalItems, setTotalItems] = useState(0)
-    allCoffeesSelected.map((item) => {
-        console.log(item.price)
-    })
+    function calculateTotalItems() {
+        let totalPriceCoffees = 0
+
+        allCoffeesSelected.forEach(coffee => {
+            totalPriceCoffees += parseFloat(coffee.price) * coffee.amountCoffee
+        })
+
+        return totalPriceCoffees
+    }
+    const sumOfCoffeesPrice = (calculateTotalItems()).toFixed(2)
+    console.log(sumOfCoffeesPrice)
 
     return (
         <>
