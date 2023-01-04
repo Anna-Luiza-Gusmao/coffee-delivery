@@ -11,7 +11,7 @@ interface DataCoffee {
     tag: object
     name: string,
     description: string,
-    price: string,
+    price: number,
     amountCoffee: number
 }
 

@@ -29,7 +29,7 @@ export function Checkout() {
     const navigate = useNavigate()
     const [chosenPaymentOption, setChosenPaymentOption] = useState("")
     const { 
-        render, 
+        renderFormAddress, 
         newCep,
         newStreet,
         newNumber,
@@ -108,7 +108,7 @@ export function Checkout() {
             <Container onSubmit={handleAddressForm}>
                 <section>
                     <TitleContainers>Complete seu pedido</TitleContainers>
-                    {render}
+                    {renderFormAddress}
                     <PaymentContainer>
                         <HeaderPaymentContainer>
                             <CurrencyDollar color="#8047F8" size={24} />

@@ -59,7 +59,7 @@ export function FormAddress() {
         newDistrict,
         newCity,
         newState,
-        render: (
+        renderFormAddress: (
             <AddressForm>
                 <HeaderAddressForm>
                     <MapPinLine color="#C47F17" size={24} />

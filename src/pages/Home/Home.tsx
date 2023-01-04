@@ -71,7 +71,7 @@ export function Home () {
                                 <PriceContainer>
                                     <div>
                                         <DollarSign>R$</DollarSign>
-                                        <PriceCoffee>{coffee.price}</PriceCoffee>
+                                        <PriceCoffee>{parseFloat(coffee.price).toFixed(2).replace(".", ",")}</PriceCoffee>
                                     </div>
                                     <div style={{display: 'flex'}}>
                                         <MutedPriceCoffee id={coffee.id} amountCoffee={coffee.amountCoffee} setInitializing={initialize} />
