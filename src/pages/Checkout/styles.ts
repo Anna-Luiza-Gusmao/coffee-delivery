@@ -22,6 +22,10 @@ export const PaymentContainer = styled.div`
     background-color: ${props => props.theme['white-100']};
 
     padding: 2.5rem;
+
+    @media (min-width: 768px) and (max-width: 1366px){
+        padding: 1.75rem;
+    }
 `
 
 export const HeaderPaymentContainer = styled.div`
@@ -84,6 +88,7 @@ export const CoffeContainer = styled.div`
 
     @media (min-width: 768px) and (max-width: 1366px){
         width: 24rem;
+        padding: 1.75rem;
     }
 `
 

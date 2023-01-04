@@ -7,6 +7,12 @@ export const Container = styled.div`
     width: 100%;
 `
 
+export const ImageCoffee = styled.img`
+    @media (min-width: 768px) and (max-width: 1366px){
+        width: 5rem;
+    }
+`
+
 export const TitleCoffee = styled.p`
     margin-bottom: 1rem;
     color: ${props => props.theme['gray-400']};
@@ -38,6 +44,10 @@ export const ButtonRemove = styled.button`
     &:focus {
         box-shadow: 0 0 0 1px ${(props) => props.theme['purple-300']};
         background: ${props => props.theme['purple-100']};
+    }
+
+    @media (min-width: 768px) and (max-width: 1366px){
+        margin-left: 0.25rem;
     }
 `
 
