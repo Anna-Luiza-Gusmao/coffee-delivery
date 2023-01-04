@@ -31,7 +31,7 @@ const BaseDataCoffeesSelected = [
 ]
 
 export function SelectedCoffee({ initialize }: ISelectedCoffeeProps) {
-    const { coffees, setSumOfCoffeesPrice } = useContext(CoffeeContext)
+    const { coffees, setSumOfCoffeesPrice, setTotalAmountCoffee, totalAmountCoffee } = useContext(CoffeeContext)
     const selectedCoffees: number[] = []
     let allCoffeesSelected: IDataCoffeesSelected[] = []
 
@@ -50,7 +50,7 @@ export function SelectedCoffee({ initialize }: ISelectedCoffeeProps) {
 
     if (allCoffeesSelected.length === 0) navigate('/')
 
-    const handleRemoveCoffee = (id: number) => {
+    const handleRemoveCoffee = (id: number, amountCoffee: number) => {
         fetch(`http://localhost:3000/coffee/${id}`, {
             method: 'PATCH',
             headers: {
@@ -58,6 +58,9 @@ export function SelectedCoffee({ initialize }: ISelectedCoffeeProps) {
             },
             body: JSON.stringify({ "amountCoffee": 0 })
         }).then(data => data.json())
+
+        setTotalAmountCoffee(totalAmountCoffee - amountCoffee)
+        initialize()
     }
 
     function calculateTotalItems() {
@@ -82,7 +85,7 @@ export function SelectedCoffee({ initialize }: ISelectedCoffeeProps) {
                                 <TitleCoffee>{item.name}</TitleCoffee>
                                 <div style={{ display: 'flex' }}>
                                     <MutedPriceCoffee id={item.id} amountCoffee={item.amountCoffee} setInitializing={initialize} />
-                                    <ButtonRemove type="button" onClick={() => handleRemoveCoffee(item.id)}>
+                                    <ButtonRemove type="button" onClick={() => handleRemoveCoffee(item.id, item.amountCoffee)}>
                                         <Trash color="#8047F8" size={14} />
                                         <span style={{ paddingLeft: '0.5rem' }}></span>
                                         REMOVER

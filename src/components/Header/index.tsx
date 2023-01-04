@@ -10,18 +10,6 @@ export function Header() {
     const { totalAmountCoffee } = useContext(CoffeeContext)
     const navigate = useNavigate()
 
-    // fetch('http://localhost:3000/request', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //         "items": [
-
-    //         ]
-    //     })
-    // }).then(data => data.json())
-
     const navigationDirection = () => {
         if (totalAmountCoffee === 0) {
             navigate('/')

@@ -91,7 +91,7 @@
       "name": "Macchiato",
       "description": "Café expresso misturado com um pouco de leite quente e espuma",
       "price": 10.9,
-      "amountCoffee": 0
+      "amountCoffee": 1
     },
     {
       "id": 9,
@@ -165,62 +165,5 @@
       "amountCoffee": 0
     }
   ],
-  "address": [
-    {
-      "cep": "39401-423",
-      "street": "Perdiz",
-      "number": "190",
-      "complement": "",
-      "district": "Alcides Rabelo",
-      "city": "Montes Claros",
-      "state": "MG",
-      "payment": "Débito",
-      "id": 1
-    },
-    {
-      "cep": "22222-222",
-      "street": "Mare",
-      "number": "152",
-      "complement": "",
-      "district": "Ipatinga",
-      "city": "Montes Claros",
-      "state": "MG",
-      "payment": "Débito",
-      "id": 2
-    },
-    {
-      "cep": "22222-222",
-      "street": "teste",
-      "number": "123",
-      "complement": "",
-      "district": "teste",
-      "city": "teste",
-      "state": "TT",
-      "payment": "Débito",
-      "id": 3
-    },
-    {
-      "cep": "39401-423",
-      "street": "RUA PERDIS",
-      "number": "190",
-      "complement": "190",
-      "district": "Alcides Rabelo",
-      "city": "MONTES CLAROS",
-      "state": "MG",
-      "payment": "Crédito",
-      "id": 4
-    },
-    {
-      "cep": "39401-423",
-      "street": "RUA PERDIS",
-      "number": "190",
-      "complement": "190",
-      "district": "Alcides",
-      "city": "MONTES CLAROS",
-      "state": "MG",
-      "payment": "Crédito",
-      "id": 5
-    }
-  ],
-  "request": []
+  "address": []
 }
