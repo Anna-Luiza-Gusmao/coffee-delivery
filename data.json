@@ -166,16 +166,6 @@
     }
   ],
   "address": [
-    {
-      "cep": "39401-478",
-      "street": "Aimore",
-      "number": "234",
-      "complement": "",
-      "district": "Ipiranga",
-      "city": "Porto Alegre",
-      "state": "RS",
-      "payment": "Dinheiro",
-      "id": 1
-    }
+    
   ]
 }
