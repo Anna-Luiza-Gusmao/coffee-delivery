@@ -4,7 +4,7 @@
 
 ## 🎉 Let's go!
 
-Para iniciar o projeto insira o comando <code>npm run dev</code>
+Para iniciar o projeto insira o comando <code>npm run dev</code>  e para iniciar o servidor JSON insira em outro terminal o comando <code>npx json-server --watch db.json</code>
 
 ## 💻 Projeto
 
@@ -32,6 +32,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 📚 Bibliotecas
 
 - Phosphor Icons
+- Styled Components
+- Immer
+- React Text Mask
+- Json Server
+- React Router
 
 ## 🎨 Figma
 
