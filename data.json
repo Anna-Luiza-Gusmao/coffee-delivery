@@ -31,7 +31,7 @@
       "name": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
       "price": 9.9,
-      "amountCoffee": 1
+      "amountCoffee": 0
     },
     {
       "id": 4,
@@ -167,14 +167,14 @@
   ],
   "address": [
     {
-      "cep": "22222-222",
-      "street": "222222",
-      "number": "22",
+      "cep": "39401-478",
+      "street": "Aimore",
+      "number": "234",
       "complement": "",
-      "district": "22222",
-      "city": "222222",
-      "state": "22",
-      "payment": "Débito",
+      "district": "Ipiranga",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "payment": "Dinheiro",
       "id": 1
     }
   ]

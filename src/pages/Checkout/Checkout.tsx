@@ -145,7 +145,7 @@ export function Checkout() {
                         <SelectedCoffee initialize={initialize} />
                         <TotalItems>
                             <Description>Total de itens</Description>
-                            <Price>R$ {parseFloat(sumOfCoffeesPrice).toFixed(2).replace(".", ",")}</Price>
+                            <Price>R$ {sumOfCoffeesPrice.toFixed(2).replace(".", ",")}</Price>
                         </TotalItems>
                         <TotalItems>
                             <Description>Entrega</Description>
@@ -153,7 +153,7 @@ export function Checkout() {
                         </TotalItems>
                         <Total>
                             <DescriptionTotal>Total</DescriptionTotal>
-                            <TotalPrice>R$ {parseFloat(totalWithDeliveryPrice).toFixed(2).replace(".", ",")}</TotalPrice>
+                            <TotalPrice>R$ {totalWithDeliveryPrice.toFixed(2).replace(".", ",")}</TotalPrice>
                         </Total>
                         <ConfirmButton type="submit" disabled={checkOptionPayment}>CONFIRMAR PEDIDO</ConfirmButton>
                     </CoffeContainer>

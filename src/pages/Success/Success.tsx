@@ -21,23 +21,29 @@ export function Success() {
         setAddress(data);
     }
 
-    // function resetAmountCoffee() {
-    //     coffees.map((coffee: any) =>
-    //         fetch(`http://localhost:3000/coffee/${coffee.id}`, {
-    //             method: 'PATCH',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({ "amountCoffee": 0 })
-    //         }).then(data => data.json())
-    //     )
-    // }
+    const selectedCoffees: number[] = []
+    function resetAmountCoffee() {
+        coffees.map((coffee: any) => {
+            if (coffee.amountCoffee > 0) {
+                if (selectedCoffees.indexOf(coffee.id) == -1) {
+                    selectedCoffees.push(coffee.id)
+                    fetch(`http://localhost:3000/coffee/${coffee.id}`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ "amountCoffee": 0 })
+                    }).then(data => data.json())
+                }
+            }
+        })
+    }
 
     useEffect(() => {
         loadAddress();
         setInitializing(true);
         setTotalAmountCoffee(0);
-        //resetAmountCoffee();
+        resetAmountCoffee();
     }, [initializing])
 
     return (
