@@ -31,7 +31,7 @@
       "name": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
       "price": 9.9,
-      "amountCoffee": 0
+      "amountCoffee": 1
     },
     {
       "id": 4,
@@ -166,6 +166,16 @@
     }
   ],
   "address": [
-    
+    {
+      "cep": "22222-222",
+      "street": "222222",
+      "number": "22",
+      "complement": "",
+      "district": "22222",
+      "city": "222222",
+      "state": "22",
+      "payment": "Débito",
+      "id": 1
+    }
   ]
 }

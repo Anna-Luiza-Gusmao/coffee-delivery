@@ -1,9 +1,20 @@
 import { ReactNode, createContext, useState } from 'react'
 
-export const CoffeeContext = createContext({} as any)
+interface CoffeesContextType {
+    coffees: DataCoffee[],
+    setCoffees: React.Dispatch<React.SetStateAction<DataCoffee[]>>,
+    totalAmountCoffee: number,
+    setTotalAmountCoffee: React.Dispatch<React.SetStateAction<number>>,
+    address: DataAddress[],
+    setAddress: React.Dispatch<React.SetStateAction<DataAddress[]>>,
+    sumOfCoffeesPrice: number,
+    setSumOfCoffeesPrice: React.Dispatch<React.SetStateAction<number>>
+}
+
+export const CoffeeContext = createContext({} as CoffeesContextType)
 
 interface CoffeeContextProviderProps {
-    children:  ReactNode;
+    children: ReactNode;
 }
 
 interface DataCoffee {
@@ -27,7 +38,7 @@ interface DataAddress {
     payment: string
 }
 
-export function CoffeeContextProvider ({children}: CoffeeContextProviderProps) {
+export function CoffeeContextProvider({ children }: CoffeeContextProviderProps) {
     const [coffees, setCoffees] = useState<DataCoffee[]>([])
     const [address, setAddress] = useState<DataAddress[]>([])
 
@@ -40,17 +51,17 @@ export function CoffeeContextProvider ({children}: CoffeeContextProviderProps) {
 
     return (
         <CoffeeContext.Provider value={{
-			coffees,
+            coffees,
             setCoffees,
-            totalAmountCoffee, 
+            totalAmountCoffee,
             setTotalAmountCoffee,
-            address, 
+            address,
             setAddress,
-            sumOfCoffeesPrice, 
+            sumOfCoffeesPrice,
             setSumOfCoffeesPrice
-		}}
-		>
-			{children}
-		</CoffeeContext.Provider>
+        }}
+        >
+            {children}
+        </CoffeeContext.Provider>
     )
 }
