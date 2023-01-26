@@ -4,7 +4,13 @@
 
 ## 🎉 Let's go!
 
-Para iniciar o projeto insira o comando <code>npm run dev</code>  e para iniciar o servidor JSON insira em outro terminal o comando <code>npx json-server --watch db.json</code>
+Para iniciar o projeto insira o comando <code>npm run dev</code>  e para iniciar o servidor JSON insira em outro terminal o comando <code>npx json-server --watch data.json</code>
+
+
+## 🎥 Demonstração 
+
+<img src="./github/demonstration.gif">
+
 
 ## 💻 Projeto
 
