@@ -166,6 +166,27 @@
     }
   ],
   "address": [
-    
+    {
+      "cep": "39401-456",
+      "street": "Alvorada",
+      "number": "12",
+      "complement": "",
+      "district": "Jaragua",
+      "city": "Porto Alegre",
+      "state": "MG",
+      "payment": "Débito",
+      "id": 1
+    },
+    {
+      "cep": "39401-458",
+      "street": "Alvorada",
+      "number": "12",
+      "complement": "",
+      "district": "Jaragua",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "payment": "Débito",
+      "id": 2
+    }
   ]
 }
